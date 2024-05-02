@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa6";
@@ -10,14 +10,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { CartContext } from "@/context/CartContext";
 
-const ProductTopDetails = () => {
+const ProductTopDetails = ({product}) => {
   const [quantity,setQuantity] = useState(1)
+  const {addToCart,increaseAmount,decreaseAmount} = useContext(CartContext)
+  console.log(product);
 
   return (
     <div className="w-1/2 space-y-5">
       <div className="space-y-5">
-        <h2 className="text-2xl font-semibold">RADIANCE MODERN SOFA</h2>
+        <h2 className="text-2xl font-semibold">{product.title}</h2>
         <div className="flex items-center gap-5">
           <div className="flex gap-1 ">
             <FaStar />
@@ -77,12 +80,12 @@ const ProductTopDetails = () => {
       </div>
       <hr className="w-[70%]" />
       <div className="flex items-center gap-5 py-6">
-        <p className="text-[32px] font-bold text-[#CE0000]">$2352.41</p>
+        <p className="text-[32px] font-bold text-[#CE0000]">${product.newPrice}</p>
         <div className="flex gap-2">
           <Button variant="default" size="medium">
             BUY NOW
           </Button>
-          <Button variant="secondary" size="medium">
+          <Button onClick={()=>addToCart(product,product.id)} variant="secondary" size="medium">
             ADD TO CART
           </Button>
           <Button variant="secondary" size="medium">

@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import ProductImg from "./ProductDetails/ProductImg";
-import ProductTopDetails from "./ProductDetails/ProductDetails";
+import ProductTopDetails from "./ProductDetails/ProductTopDetails";
 import ProductDescription from "./ProductDescription/ProductDescription";
 import Review from "./Review/Review";
+import { useParams } from "react-router-dom";
+import { ProductContext } from "@/context/ProductContext";
+import { CartContext } from "@/context/CartContext";
 
 const ProductDetails = () => {
+  const {id} = useParams()
+  const {products} = useContext(ProductContext)
+  // const {addToCart} = useContext(CartContext)
+
+  const product = products.find(item => {
+    return item.id = id
+  })
+
+  if(!product){
+    <div>Loading.......</div>
+  }
+  console.log(id);
   return (
     <section className="container mx-auto">
       <div className="flex py-10">
-        <ProductImg/>
-        <ProductTopDetails/>
+        <ProductImg product={product}/>
+        <ProductTopDetails product={product}/>
       </div>
-      <ProductDescription/>
-      <Review/>
+      <ProductDescription product={product}/>
+      <Review product={product}/>
     </section>
   );
 };

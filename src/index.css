@@ -1,7 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 @layer base {
   :root {
     /* --color: 75, 4.35%, 18.04%; */

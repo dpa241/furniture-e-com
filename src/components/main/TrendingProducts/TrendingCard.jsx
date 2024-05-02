@@ -8,8 +8,8 @@ const TrendingCard = ({ item }) => {
     <div className="col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden">
       <div className="relative ">
         <div className="overflow-hidden relative w-[312px] h-[312px]">
-          {item.isNew && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-primary text-white  rounded text-sm">New</span>}
-          {item.isOnSale && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-orange-500 text-white  rounded text-sm">Sale</span>}
+          {item.isNew && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-primary text-white   text-sm">New</span>}
+          {item.isOnSale && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-orange-500 text-white  text-sm">Sale</span>}
           <img src={item.img} alt="" className="absolute" />
           <img src={item.imgAlt} alt="" className="absolute opacity-0 hover:opacity-100" />
         </div>

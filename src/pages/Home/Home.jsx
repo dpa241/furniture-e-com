@@ -11,7 +11,7 @@ import Client from "@/components/main/Client/Client";
 
 const Home = () => {
   return (
-    <div className=" space-y-[80px]">
+    <div className="space-y-[80px]">
       <Banner />
       <FeaturedProducts />
       <Categories/>

@@ -7,6 +7,8 @@ import Header from "./components/main/Header/Header"
 import Footer from "./components/main/Footer/Footer"
 import CartPage from "./pages/Cart/CartPage"
 import Sidebar from "./components/main/Sidebar/Sidebar"
+import LogIn from "./pages/SignUpAndSignIn/LogIn/LogIn"
+import SignUp from "./pages/SignUpAndSignIn/SignUp/SignUp"
 
 function App() {
 
@@ -16,9 +18,12 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<Home/>}/>
           <Route path="/product/:id" element={<ProductDetails/>}/>
           <Route path="/category/:id"/>
           <Route path="/cartpage" element={<CartPage/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/login" element={<LogIn/>}/>
         </Routes>
         <Sidebar/>
         <Footer/>

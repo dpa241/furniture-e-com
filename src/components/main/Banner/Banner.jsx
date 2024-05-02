@@ -5,8 +5,8 @@ import banner from '../../../assets/bannerImg.png'
 
 const Banner = () => {
   return (
-    <section className="h-[60vh]">
-      <div className="container mx-auto">
+    <section className="pt-[92px]">
+      <div className="container mx-auto h-[65vh]">
         <div className="flex justify-between gap-x-5 lg:px-10 ">
           {/* Text */}
           <div className="flex flex-col max-w-[600px] justify-center mx-auto lg:mx-0 text-center lg:text-left py-12 lg:py-32 px-10 ">

@@ -11,12 +11,19 @@ import {Command,CommandInput} from "@/components/ui/command";
 // icons
 import { LuMenu } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen,setIsOpen] = useState(false)
+  const [activeHeader,setActiveHeader] = useState(true)
+
+  // event listener
+  window.addEventListener('scroll', ()=>{
+    window.scrollY > 60 ? setActiveHeader(true) : setActiveHeader(false)
+  })
   return (
-    <header className=" container mx-auto py-5 border">
+    <header className={`${activeHeader? "bg-white py-4 shadow-md ": "bg-none py-6"} fixed z-50 top-0 container mx-auto border transition-all duration-300`}>
       <div className="flex justify-between items-center">
-        <Logo />
+        <Link to="/"><Logo /></Link>
         <div>
           <Command>
             <CommandInput placeholder="search" />

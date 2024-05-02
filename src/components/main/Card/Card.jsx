@@ -2,8 +2,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { useParams } from "react-router-dom";
 
 const Card = ({ item }) => {
+
   return (
     <div className="col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden">
       <div className="relative ">
