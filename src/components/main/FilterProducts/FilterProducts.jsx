@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import NewProducts from "@/components/main/NewProducts/NewProducts";
 import TrendingProducts from "@/components/main/TrendingProducts/TrendingProducts";
 
 // UI COmponents
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { ProductContext } from '@/context/ProductContext';
+import { Link } from 'react-router-dom';
 
 const FilterProducts = () => {
+  const [viweBtn,setViewBtn] = useState(1)
+  const {trendingData,newData} = useContext(ProductContext)
+  console.log(trendingData);
   return (
     <>
         <Tabs
@@ -24,23 +29,25 @@ const FilterProducts = () => {
         <TabsContent value="trending">
           <TrendingProducts />
           <div className="flex justify-center ">
-            <Button
-              variant="link"
-              className="absolute md:top-0 md:right-9 lg:right-5"
-            >
+          {
+            trendingData?.slice(0,viweBtn).map(item=>{
+              return <Link key={item.id} to={`/popular/${item.category}`}><Button onClick={""} variant="link" className="absolute md:top-0 md:right-9 lg:right-5">
               View All
-            </Button>
+            </Button></Link>
+            })
+          }
           </div>
         </TabsContent>
         <TabsContent value="new" className="">
           <NewProducts />
           <div className="flex justify-center ">
-            <Button
-              variant="link"
-              className="absolute md:top-0 md:right-9 lg:right-5"
-            >
+          {
+            newData?.slice(0,viweBtn).map(item=>{
+              return <Link key={item.id} to={`/popular/${item.category}`}><Button onClick={""} variant="link" className="absolute md:top-0 md:right-9 lg:right-5">
               View All
-            </Button>
+            </Button></Link>
+            })
+          }
           </div>
         </TabsContent>
       </Tabs>

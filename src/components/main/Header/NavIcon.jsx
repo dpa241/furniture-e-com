@@ -5,6 +5,7 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { SidebarContext } from "@/context/SidebarContext";
 import { CartContext } from "@/context/CartContext";
+import { Link } from "react-router-dom";
 
 // const iconList = [
 //   <MdOutlineFavoriteBorder />,
@@ -28,8 +29,8 @@ const NavIcon = () => {
     // </div>
 
     //=========================Navigation Icons=========================//
-    <ul className="hidden lg:flex gap-5">
-      <li className="list-none relative hover:text-primary transition-all">
+    <ul className="flex gap-5 ">
+      <li className="hidden lg:flex list-none relative hover:text-primary transition-all">
         <a href="#" className="text-xl">
           <MdOutlineFavoriteBorder />
         </a>
@@ -42,10 +43,10 @@ const NavIcon = () => {
           <div className="flex justify-center items-center w-4 h-4 bg-primary rounded-full absolute -top-2 -right-2 text-xs font-medium text-white">{itemAmount}</div>
         </div>
       </li>
-      <li className="list-none relative hover:text-primary transition-all">
-        <a href="#" className="text-xl">
+      <li className="hidden lg:flex list-none relative hover:text-primary transition-all">
+        <Link to={'/profile'} className="text-xl">
           <FaRegUser />
-        </a>
+        </Link>
       </li>
     </ul>
   );

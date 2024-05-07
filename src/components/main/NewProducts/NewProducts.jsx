@@ -5,20 +5,13 @@ import { ProductContext } from "@/context/ProductContext";
 
 const NewProducts = () => {
 
-  const {products} = useContext(ProductContext)
-
-  const trendingProducts = products.filter(item=>{
-    return (
-      item.category === "new"
-    )
-  })  
-
+  const {newData,viewAll} = useContext(ProductContext)
 
   return (
     <section className="">
         <div className="grid grid-cols-4 gap-5 ">
           {
-            trendingProducts.map(item =>(
+            newData?.slice(0,viewAll).map(item =>(
               <NewCard item={item} key={item.id}/>
             ))
           }

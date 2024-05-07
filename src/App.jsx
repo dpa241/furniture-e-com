@@ -9,6 +9,8 @@ import CartPage from "./pages/Cart/CartPage"
 import Sidebar from "./components/main/Sidebar/Sidebar"
 import LogIn from "./pages/SignUpAndSignIn/LogIn/LogIn"
 import SignUp from "./pages/SignUpAndSignIn/SignUp/SignUp"
+import Profile from "./pages/Profile/Profile"
+import PopularPage from "./pages/PopularPage/PopularPage"
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails/>}/>
           <Route path="/category/:id"/>
           <Route path="/cartpage" element={<CartPage/>}/>
+          <Route path="/popular/:catName" element={<PopularPage/>}/>
+          <Route path="/profile" element={<Profile/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/login" element={<LogIn/>}/>
         </Routes>

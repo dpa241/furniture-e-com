@@ -10,6 +10,7 @@ import { CartContext } from "@/context/CartContext";
 
 const ProductDetails = () => {
   const {id} = useParams()
+  console.log(id);
   const {products} = useContext(ProductContext)
   // const {addToCart} = useContext(CartContext)
 
@@ -22,7 +23,7 @@ const ProductDetails = () => {
   }
   console.log(id);
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto pt-[92px]">
       <div className="flex py-10">
         <ProductImg product={product}/>
         <ProductTopDetails product={product}/>

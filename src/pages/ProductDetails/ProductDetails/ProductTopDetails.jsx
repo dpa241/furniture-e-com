@@ -15,7 +15,7 @@ import { CartContext } from "@/context/CartContext";
 const ProductTopDetails = ({product}) => {
   const [quantity,setQuantity] = useState(1)
   const {addToCart,increaseAmount,decreaseAmount} = useContext(CartContext)
-  console.log(product);
+  // console.log(product);
 
   return (
     <div className="w-1/2 space-y-5">
@@ -60,6 +60,7 @@ const ProductTopDetails = ({product}) => {
           <button 
             className="py-[3px] px-2 self-center cursor-pointer text-lg font-medium"
             onClick={()=>setQuantity((prev)=> prev+1)}
+            // onClick={()=>increaseAmount(product.id)}
             >
             +
           </button>
@@ -67,6 +68,7 @@ const ProductTopDetails = ({product}) => {
           <button 
             className="py-[2px] px-2 self-center cursor-pointer text-lg font-medium"
             onClick={()=>setQuantity((prev)=> prev === 1 ? 1: prev-1)}
+            // onClick={()=>decreaseAmount(product.id)}
             >
             -
           </button>

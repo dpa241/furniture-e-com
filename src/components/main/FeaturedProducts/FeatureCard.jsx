@@ -24,7 +24,7 @@ const FeatureCard = ({ item }) => {
             <h2 className="text-primary ">{item.title}</h2>
             <span className="text-[18px] font-semibold">${item.newPrice}</span>
           </div>
-          <Link to={`/product/${item.id}`}>
+          <div>
             <Button
               onClick={()=>addToCart(item,item.id)}
               variant="cartBtn"
@@ -32,7 +32,7 @@ const FeatureCard = ({ item }) => {
             >
               <IoCartOutline size={25} />
             </Button>
-          </Link>
+          </div>
         </div>
         <div className="absolute -right-11 top-2 opacity-0 group-hover:opacity-100 group-hover:right-2 transition-all duration-300 ">
           <Button size="icon" variant="outline">

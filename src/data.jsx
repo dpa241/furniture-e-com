@@ -169,6 +169,7 @@ export const productData = [
   {
     id: 1,
     category: 'featured',
+    category_id: 1001,
     img: '/products/featureprod1.png',
     imgAlt:'/products/featureprod5.png',
     title: "Library Stool Chair ",
@@ -180,6 +181,7 @@ export const productData = [
   {
     id: 2,
     category: 'featured',
+    category_id: 1001,
     img: '/products/featureprod2.png',
     // imgAlt:'/products/featureprod5.png',
     title: "Library Stool Chair ",
@@ -191,6 +193,7 @@ export const productData = [
   {
     id: 3,
     category: 'featured',
+    category_id: 1001,
     img: '/products/featureprod3.png',
     title: "Library Stool Chair ",
     isNew: false,
@@ -201,6 +204,7 @@ export const productData = [
   {
     id: 4,
     category: 'featured',
+    category_id: 1001,
     img: '/products/featureprod4.png',
     title: "Library Stool Chair ",
     isNew: false,
@@ -211,6 +215,7 @@ export const productData = [
   {
     id: 5,
     category: 'trending',
+    category_id: 1002,
     img: '/products/trending1.jpg',
     title: "Library Stool Chair ",
     isNew: false,
@@ -221,6 +226,7 @@ export const productData = [
   {
     id: 6,
     category: 'new',
+    category_id: 1003,
     img: '/products/featureprod4.png',
     title: "Library Stool Chair ",
     isNew: true,
@@ -231,6 +237,7 @@ export const productData = [
   {
     id: 7,
     category: 'new',
+    category_id: 1003,
     img: '/products/new3.jpg',
     title: "Library Stool Chair ",
     isNew: true,
@@ -241,6 +248,7 @@ export const productData = [
   {
     id: 8,
     category: 'trending',
+    category_id: 1002,
     img: '/products/trending2.jpg',
     title: "Library Stool Chair ",
     isNew: false,
@@ -251,6 +259,7 @@ export const productData = [
   {
     id: 9,
     category: 'new',
+    category_id: 1003,
     img: '/products/new2.jpg',
     title: "Library Stool Chair ",
     isNew: true,
@@ -261,6 +270,7 @@ export const productData = [
   {
     id: 10,
     category: 'trending',
+    category_id: 1002,
     img: '/products/trending3.jpg',
     title: "Library Stool Chair ",
     isNew: false,
@@ -271,6 +281,7 @@ export const productData = [
   {
     id: 11,
     category: 'trending',
+    category_id: 1002,
     img: '/products/featureprod4.png',
     title: "Library Stool Chair ",
     isNew: false,
@@ -281,6 +292,7 @@ export const productData = [
   {
     id: 12,
     category: 'new',
+    category_id: 1003,
     img: '/products/new1.jpg',
     title: "Library Stool Chair ",
     isNew: true,
@@ -288,16 +300,28 @@ export const productData = [
     oldPrice: 35,
     newPrice: 22,
   },
-  // {
-  //   id: 13,
-  //   category: 'featured',
-  //   img: '/products/featureprod4.png',
-  //   title: "Library Stool Chair ",
-  //   isNew: false,
-  //   isOnSale: false,
-  //   oldPrice: 35,
-  //   newPrice: 22,
-  // },
+  {
+    id: 13,
+    category: 'featured',
+    category_id: 1001,
+    img: '/products/featureprod4.png',
+    title: "Library Stool Chair ",
+    isNew: false,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
+  },
+  {
+    id: 14,
+    category: 'featured',
+    category_id: 1001,
+    img: '/products/featureprod1.png',
+    title: "Library Stool Chair ",
+    isNew: false,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
+  },
   // {
   //   id: 14,
   //   category: 'new',

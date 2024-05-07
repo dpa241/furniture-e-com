@@ -6,7 +6,7 @@ import React, { useState } from "react";
 const CartPage = () => {
   const [quantity, setQuantity] = useState(1);
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto pt-[92px]">
       <div className="flex py-12 gap-10">
         <div className="w-2/3 ">
           <div className="flex justify-between  border-b-[1px] pb-5">
