@@ -1,4 +1,5 @@
-import FeatureCard from "@/components/main/FeaturedProducts/FeatureCard";
+import ProductCard from "@/components/main/CommonProduct/ProductCard";
+// import FeatureCard from "@/components/main/TrashCode/FeaturedProducts/FeatureCard";
 import { ProductContext } from "@/context/ProductContext";
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
@@ -18,7 +19,7 @@ const PopularPage = () => {
       <div className="col-span-2 grid grid-cols-4 gap-5 ">
 
         {categoryData.map((item) => (
-          <FeatureCard item={item} key={item.id} />
+          <ProductCard item={item} key={item.id} />
         ))}
       </div>
     </div>

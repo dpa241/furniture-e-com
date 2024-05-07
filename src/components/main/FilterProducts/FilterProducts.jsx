@@ -1,20 +1,16 @@
-import React, { useContext, useState } from 'react'
-import NewProducts from "@/components/main/NewProducts/NewProducts";
-import TrendingProducts from "@/components/main/TrendingProducts/TrendingProducts";
+import React, { useContext, useState } from "react";
+// import NewProducts from "@/components/main/TrashCode/NewProducts/NewProducts";
+// import TrendingProducts from "@/components/main/TrashCode/TrendingProducts/TrendingProducts";
 
 // UI COmponents
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { ProductContext } from '@/context/ProductContext';
-import { Link } from 'react-router-dom';
+import TrendingProducts from "./TrendingProducts";
+import NewProducts from "./NewProducts";
 
 const FilterProducts = () => {
-  const [viweBtn,setViewBtn] = useState(1)
-  const {trendingData,newData} = useContext(ProductContext)
-  console.log(trendingData);
   return (
     <>
-        <Tabs
+      <Tabs
         defaultValue="trending"
         className="relative container mx-auto space-y-8"
       >
@@ -27,32 +23,15 @@ const FilterProducts = () => {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="trending">
+          {/* Trending Products*/}
           <TrendingProducts />
-          <div className="flex justify-center ">
-          {
-            trendingData?.slice(0,viweBtn).map(item=>{
-              return <Link key={item.id} to={`/popular/${item.category}`}><Button onClick={""} variant="link" className="absolute md:top-0 md:right-9 lg:right-5">
-              View All
-            </Button></Link>
-            })
-          }
-          </div>
         </TabsContent>
         <TabsContent value="new" className="">
           <NewProducts />
-          <div className="flex justify-center ">
-          {
-            newData?.slice(0,viweBtn).map(item=>{
-              return <Link key={item.id} to={`/popular/${item.category}`}><Button onClick={""} variant="link" className="absolute md:top-0 md:right-9 lg:right-5">
-              View All
-            </Button></Link>
-            })
-          }
-          </div>
         </TabsContent>
       </Tabs>
     </>
-  )
-}
+  );
+};
 
-export default FilterProducts
+export default FilterProducts;

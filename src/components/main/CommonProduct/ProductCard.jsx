@@ -5,9 +5,8 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { CartContext } from "@/context/CartContext";
 import { Link, useParams } from "react-router-dom";
 
-const FeatureCard = ({ item }) => {
-  // const {id} = useParams()
-  const {addToCart} = useContext(CartContext)
+const ProductCard = ({item}) => {
+    const {addToCart} = useContext(CartContext)
   return (
     <div className="col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden">
       <div className="relative ">
@@ -41,7 +40,7 @@ const FeatureCard = ({ item }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FeatureCard;
+export default ProductCard
