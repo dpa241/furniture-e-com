@@ -12,9 +12,15 @@ import {
 } from "@/components/ui/select";
 import { CartContext } from "@/context/CartContext";
 
-const ProductTopDetails = ({product}) => {
-  const [quantity,setQuantity] = useState(1)
-  const {addToCart,increaseAmount,decreaseAmount} = useContext(CartContext)
+const ProductTopDetails = ({ product }) => {
+  const [quantity, setQuantity] = useState(1);
+  const {
+    addToCart,
+    increaseAmount,
+    decreaseAmount,
+    itemAmount,
+    decreaseAmountNotZero,
+  } = useContext(CartContext);
   // console.log(product);
 
   return (
@@ -29,7 +35,7 @@ const ProductTopDetails = ({product}) => {
             <FaStar />
             <FaRegStar />
           </div>
-          <Button variant="destructive" size="medium">
+          <Button variant="destructive" size="sm" className="rounded-none">
             On Sale
           </Button>
         </div>
@@ -40,8 +46,8 @@ const ProductTopDetails = ({product}) => {
       <hr className="w-[50%]" />
       <div className="flex items-center gap-5">
         <div className="py-6">
-          <Select>
-            <SelectTrigger className="w-[150px] space-x-1 bg-secondary/80">
+          <Select className="">
+            <SelectTrigger className="h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-none space-x-3">
               <p>Type:</p>
               {/* <SelectItem value="light">Light</SelectItem> */}
               <SelectValue
@@ -49,14 +55,14 @@ const ProductTopDetails = ({product}) => {
                 placeholder="Select"
               />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-none">
               <SelectItem value="light">Light</SelectItem>
               <SelectItem value="dark">Dark</SelectItem>
               <SelectItem value="system">System</SelectItem>
             </SelectContent>
           </Select>
         </div>
-        <div className="bg-secondary flex items-center rounded border border-input ">
+        {/* <div className="bg-secondary flex items-center rounded border border-input ">
           <button 
             className="py-[3px] px-2 self-center cursor-pointer text-lg font-medium"
             onClick={()=>setQuantity((prev)=> prev+1)}
@@ -64,33 +70,72 @@ const ProductTopDetails = ({product}) => {
             >
             +
           </button>
-          <span className="text-sm">Number : {quantity}</span>
+          <span className="text-sm">Number : {itemAmount}</span>
           <button 
             className="py-[2px] px-2 self-center cursor-pointer text-lg font-medium"
             onClick={()=>setQuantity((prev)=> prev === 1 ? 1: prev-1)}
-            // onClick={()=>decreaseAmount(product.id)}
+            // onClick={()=>decreaseAmountNotZero(product.id)}
             >
             -
           </button>
+        </div> */}
+        <div>
+          <Button
+            variant="outline"
+            className="border-r-0"
+            onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+          >
+            -
+          </Button>
+          <Button variant="outline" className="">1</Button>
+          <Button
+            variant="outline"
+            className="border-l-0"
+            onClick={() => setQuantity((prev) => prev + 1)}
+          >
+            +
+          </Button>
         </div>
         <div className="flex gap-2">
-          <button className="w-8 h-8 bg-teal-700 cursor-pointer ring-teal-700 ring-offset-2 focus:ring-2"></button>
-          <button className="w-8 h-8 bg-[#7BB5EB] cursor-pointer ring-[#7BB5EB] ring-offset-2 focus:ring-2"></button>
-          <button className="w-8 h-8 bg-[#5D3B53] cursor-pointer ring-[#5D3B53] ring-offset-2 focus:ring-2"></button>
-          <button className="w-8 h-8 bg-gray-400 cursor-pointer ring-gray-400 ring-offset-2 focus:ring-2"></button>
+          <Button
+            variant="icon"
+            size="icon"
+            className="bg-teal-700 cursor-pointer ring-teal-700 ring-offset-2 focus:ring-2 rounded-none"
+          ></Button>
+          <Button
+            variant="icon"
+            size="icon"
+            className="bg-[#7BB5EB] cursor-pointer ring-[#7BB5EB] ring-offset-2 focus:ring-2 rounded-none"
+          ></Button>
+          <Button
+            variant="icon"
+            size="icon"
+            className="bg-[#5D3B53] cursor-pointer ring-[#5D3B53] ring-offset-2 focus:ring-2 rounded-none"
+          ></Button>
+          <Button
+            variant="icon"
+            size="icon"
+            className=" bg-gray-400 cursor-pointer ring-gray-400 ring-offset-2 focus:ring-2 rounded-none"
+          ></Button>
         </div>
       </div>
       <hr className="w-[70%]" />
       <div className="flex items-center gap-5 py-6">
-        <p className="text-[32px] font-bold text-[#CE0000]">${product.newPrice}</p>
+        <p className="text-[32px] font-bold text-[#CE0000]">
+          ${product.newPrice}
+        </p>
         <div className="flex gap-2">
-          <Button variant="default" size="medium">
+          <Button variant="default" size="">
             BUY NOW
           </Button>
-          <Button onClick={()=>addToCart(product,product.id)} variant="secondary" size="medium">
+          <Button
+            onClick={() => addToCart(product, product.id)}
+            variant="outline"
+            size=""
+          >
             ADD TO CART
           </Button>
-          <Button variant="secondary" size="medium">
+          <Button variant="outline" size="">
             <FaRegHeart />
           </Button>
         </div>

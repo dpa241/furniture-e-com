@@ -14,7 +14,7 @@ import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen,setIsOpen] = useState(false)
-  const [activeHeader,setActiveHeader] = useState(true)
+  const [activeHeader,setActiveHeader] = useState(false)
 
   // event listener
   window.addEventListener('scroll', ()=>{

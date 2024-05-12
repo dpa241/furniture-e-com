@@ -24,7 +24,7 @@ const ProductDetails = () => {
   console.log(id);
   return (
     <section className="container mx-auto pt-[92px]">
-      <div className="flex py-10">
+      <div className="flex items-center py-10">
         <ProductImg product={product}/>
         <ProductTopDetails product={product}/>
       </div>

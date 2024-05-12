@@ -12,6 +12,7 @@ import SignUp from "./pages/SignUpAndSignIn/SignUp/SignUp"
 import Profile from "./pages/Profile/Profile"
 import PopularPage from "./pages/PopularPage/PopularPage"
 
+
 function App() {
 
   return (

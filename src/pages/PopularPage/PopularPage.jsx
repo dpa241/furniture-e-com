@@ -14,8 +14,8 @@ const PopularPage = () => {
 
 
   return (
-    <div className="container mx-auto pt-[92px]">
-      <h2 className="text-3xl font-semibold uppercase text-center py-6"><span>{catName}</span> Products</h2>
+    <div className="container mx-auto py-[150px]">
+      <h2 className="text-3xl font-semibold uppercase text-center pb-10"><span>{catName}</span> Products</h2>
       <div className="col-span-2 grid grid-cols-4 gap-5 ">
 
         {categoryData.map((item) => (

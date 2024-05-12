@@ -17,7 +17,7 @@ const GetInTouch = () => {
             experience and personalized assistance.
           </p>
           <div className="flex w-full max-w-sm items-center space-x-2">
-            <Input type="email" placeholder="Email" />
+            <Input type="email" placeholder="Email" className="px-2" />
             <Button type="submit">Subscribe</Button>
           </div>
         </div>

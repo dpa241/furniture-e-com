@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CartContext } from "@/context/CartContext";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { Link } from "react-router-dom";
 
@@ -36,10 +36,10 @@ const CartItem = ({ item }) => {
                 <span>{amount}</span>
                 <span onClick={()=>increaseAmount(id)}><IoMdAdd/></span>
               </Button>
-              <span>$12</span>
+              <span>${newPrice}</span>
             </div>
             <div>
-              <span>$322</span>
+              <span>${newPrice * amount}</span>
             </div>
           </div>
         </div>

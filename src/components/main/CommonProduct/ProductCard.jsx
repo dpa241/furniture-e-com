@@ -27,7 +27,7 @@ const ProductCard = ({item}) => {
             <Button
               onClick={()=>addToCart(item,item.id)}
               variant="cartBtn"
-              className="group-hover:bg-primary group-hover:text-white transition-all duration-300"
+              className="group-hover:bg-primary group-hover:text-white"
             >
               <IoCartOutline size={25} />
             </Button>

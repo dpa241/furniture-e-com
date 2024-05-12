@@ -9,7 +9,7 @@ const Banner = () => {
       <div className="container mx-auto h-[65vh]">
         <div className="flex justify-between gap-x-5 lg:px-10 ">
           {/* Text */}
-          <div className="flex flex-col max-w-[600px] justify-center mx-auto lg:mx-0 text-center lg:text-left py-12 lg:py-32 px-10 ">
+          <div className="flex flex-1 flex-col max-w-[500px] justify-center mx-auto lg:mx-0 text-center lg:text-left py-12 lg:py-32 px-10 ">
             <p className="text-sm">Welcome to chairy</p>
             <h1 className="text-4xl lg:text-[42px] font-bold  leading-[60px] pb-8">
               Best Furniture Collection For Your Interior.
@@ -22,9 +22,9 @@ const Banner = () => {
             </div>
           </div>
           {/* image */}
-          <div className="hidden lg:flex ">
+          <div className="hidden lg:flex flex-1 ">
             <div className=" flex justify-center bg-hero_shape w-[550px] bg-contain bg-no-repeat">
-              <img src={banner} alt="" className="w-72 mt-28 object-cover object-center " />
+              <img src={banner} alt="" className="w-80 mt-28 object-cover object-center " />
             </div>
           </div>
         </div>
