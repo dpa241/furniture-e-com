@@ -80,26 +80,26 @@ const CartProvider = ({children}) => {
       removeFromCart(id)
     }
   }
-  // const decreaseAmountNotZero = (id) =>{
-  //   const cartItem = cart.find(item =>{
-  //     return item.id === id
-  //   })
-  //   if(cartItem){
-  //     const newCart = cart.map(item => {
-  //       if(item.id === id){
-  //         return {...item, amount: cartItem.amount-1}
-  //       }else{
-  //         return item
-  //       }
-  //     })
-  //     setCart(newCart);
-  //   }
-  //   if(cartItem.amount == 1){
-  //     setCart(cart)
-  //   }
-  // }
+  const decreaseAmountNotZero = (id) =>{
+    const cartItem = cart.find(item =>{
+      return item.id === id
+    })
+    if(cartItem){
+      const newCart = cart.map(item => {
+        if(item.id === id){
+          return {...item, amount: cartItem.amount-1}
+        }else{
+          return item
+        }
+      })
+      setCart(newCart);
+    }
+    if(cartItem.amount == 1){
+      setCart(cart)
+    }
+  }
   return (
-    <CartContext.Provider value={{cart,addToCart,removeFromCart,clearCart,increaseAmount,decreaseAmount,itemAmount,total}}>
+    <CartContext.Provider value={{cart,addToCart,removeFromCart,clearCart,increaseAmount,decreaseAmount,decreaseAmountNotZero,itemAmount,total}}>
       {children}
     </CartContext.Provider>
   )

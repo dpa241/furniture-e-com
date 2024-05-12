@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const CartItem = ({ item }) => {
   const { id, title, img, amount, newPrice } = item;
-  const { removeFromCart, increaseAmount, decreaseAmount } =
+  const { removeFromCart, increaseAmount, decreaseAmount,decreaseAmountNotZero } =
     useContext(CartContext);
   return (
     <div className="flex">
@@ -41,7 +41,7 @@ const CartItem = ({ item }) => {
                     variant="outline"
                     size="xs"
                     className="border-r-0"
-                    onClick={() => decreaseAmount(id)}
+                    onClick={() => decreaseAmountNotZero(id)}
                   >
                     <IoMdRemove />
                   </Button>
@@ -60,7 +60,7 @@ const CartItem = ({ item }) => {
               <span>${newPrice}</span>
             </div>
             <div>
-              <span className="font-medium">${newPrice * amount}</span>
+              <span className="font-medium">${parseFloat(newPrice * amount).toFixed(2)}</span>
             </div>
           </div>
         </div>

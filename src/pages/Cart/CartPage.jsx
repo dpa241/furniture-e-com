@@ -7,26 +7,28 @@ import OrderSumary from "./OrderSumary";
 import { CartContext } from "@/context/CartContext";
 import { X } from "lucide-react";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
+import { ScrollArea } from "@/components/ui/scroll-area"
+
 
 const CartPage = () => {
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
   const { cart, clearCart, total } = useContext(CartContext);
-  const { removeFromCart, increaseAmount, decreaseAmount } =
+  const { removeFromCart, increaseAmount, decreaseAmount,decreaseAmountNotZero } =
     useContext(CartContext);
   const tax = parseFloat(total * 0.15).toFixed(2);
-  console.log(typeof(tax));
+
   
   const discount = parseFloat(total * 0.1).toFixed(2);
-  console.log(typeof(discount));
   const maxTotal = total+tax+discount
   
   return (
     <section className="container mx-auto pt-[92px]">
       <div className="flex py-12 gap-10">
-        <div className="w-2/3 overflow-hiden scroll-y h-[80vh] ">
+        <div className="w-2/3 ">
           <h2 className="text-2xl uppercase font-medium">
-            You have (2) items in your cart
+            You have (0) items in your cart
           </h2>
+          <ScrollArea className="h-[60vh] pr-8">
           {cart.map((item) => {
             const { id, title, img, amount, newPrice } = item;
             return (
@@ -72,9 +74,10 @@ const CartPage = () => {
                           variant="outline"
                           size="sm"
                           className="border-r-0 rounded-none"
-                          onClick={() =>
-                            setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                          }
+                          // onClick={() =>
+                          //   setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                          // }
+                          onClick={()=>decreaseAmountNotZero(id)}
                         >
                           <IoMdRemove />
                         </Button>
@@ -83,13 +86,14 @@ const CartPage = () => {
                           size="sm"
                           className="hover:bg-transparent cursor-default rounded-none"
                         >
-                          1
+                          {amount}
                         </Button>
                         <Button
                           variant="outline"
                           size="sm"
                           className="border-l-0 rounded-none"
-                          onClick={() => setQuantity((prev) => prev + 1)}
+                          // onClick={() => setQuantity((prev) => prev + 1)}
+                          onClick={()=>increaseAmount(id)}
                         >
                           <IoMdAdd />
                         </Button>
@@ -111,6 +115,8 @@ const CartPage = () => {
               </div>
             );
           })}
+          </ScrollArea>
+          
         </div>
         {/* Right-Side-Price-Calculation */}
         {/* <OrderSumary/> */}
