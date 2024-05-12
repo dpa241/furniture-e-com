@@ -1,22 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { CartContext } from "@/context/CartContext";
+import { X } from "lucide-react";
 import { useContext } from "react";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const CartItem = ({ item }) => {
   const { id, title, img, amount, newPrice } = item;
-  const {removeFromCart,increaseAmount,decreaseAmount} = useContext(CartContext)
+  const { removeFromCart, increaseAmount, decreaseAmount } =
+    useContext(CartContext);
   return (
     <div className="flex">
-      <div className="flex items-center gap-2 w-full h-[150px] border-b ">
+      <div className="flex items-center gap-2 w-full h-[150px] border-b  ">
         {/* Image */}
         <div>
           <Link to={`/product/${id}`}>
             <img src={img} alt="" className="max-w-[80px]" />
           </Link>
         </div>
-        <div className="w-full">
+        <div className="w-full space-y-3">
           {/* title and remove icon */}
           <div className="flex items-center justify-between">
             {/* title */}
@@ -27,19 +29,38 @@ const CartItem = ({ item }) => {
               {title}
             </Link>
             {/* remove icon */}
-            <div onClick={()=>removeFromCart(id)} className="cursor-pointer">X</div>
+            <div onClick={() => removeFromCart(id)} className="cursor-pointer">
+            <X className="hover:text-red-600 transition-all duration-200" />
+            </div>
           </div>
           <div className="flex items-center justify-between">
             <div className="flex gap-3 items-center">
-              <Button variant='secondary'>
-                <span onClick={()=>decreaseAmount(id)}><IoMdRemove/></span>
-                <span>{amount}</span>
-                <span onClick={()=>increaseAmount(id)}><IoMdAdd/></span>
-              </Button>
+              {/* Button */}
+                <div className="flex">
+                  <Button
+                    variant="outline"
+                    size="xs"
+                    className="border-r-0"
+                    onClick={() => decreaseAmount(id)}
+                  >
+                    <IoMdRemove />
+                  </Button>
+                  <Button variant="outline" size="xs" className="hover:bg-transparent  cursor-default">
+                    {amount}
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="xs"
+                    className="border-l-0"
+                    onClick={() => increaseAmount(id)}
+                  >
+                    <IoMdAdd />
+                  </Button>
+                </div>
               <span>${newPrice}</span>
             </div>
             <div>
-              <span>${newPrice * amount}</span>
+              <span className="font-medium">${newPrice * amount}</span>
             </div>
           </div>
         </div>

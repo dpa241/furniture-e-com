@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CartContext } from "@/context/CartContext";
+import { IoMdAdd, IoMdRemove } from "react-icons/io";
 
 const ProductTopDetails = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -79,21 +80,21 @@ const ProductTopDetails = ({ product }) => {
             -
           </button>
         </div> */}
-        <div>
+        <div className="flex items-center">
           <Button
             variant="outline"
             className="border-r-0"
             onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
           >
-            -
+            <IoMdRemove/>
           </Button>
-          <Button variant="outline" className="">1</Button>
+          <Button variant="outline" className="hover:bg-transparent cursor-default">1</Button>
           <Button
             variant="outline"
             className="border-l-0"
             onClick={() => setQuantity((prev) => prev + 1)}
           >
-            +
+            <IoMdAdd/>
           </Button>
         </div>
         <div className="flex gap-2">
