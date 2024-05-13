@@ -14,6 +14,7 @@ import { CartContext } from "@/context/CartContext";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 
 const ProductTopDetails = ({ product }) => {
+  const {id,title,newPrice} = product
   const [quantity, setQuantity] = useState(1);
   const {
     addToCart,
@@ -22,12 +23,12 @@ const ProductTopDetails = ({ product }) => {
     itemAmount,
     decreaseAmountNotZero,
   } = useContext(CartContext);
-  // console.log(product);
+  console.log(id);
 
   return (
     <div className="w-1/2 space-y-5">
       <div className="space-y-5">
-        <h2 className="text-2xl font-semibold">{product.title}</h2>
+        <h2 className="text-2xl font-semibold">{title}</h2>
         <div className="flex items-center gap-5">
           <div className="flex gap-1 ">
             <FaStar />
@@ -83,16 +84,18 @@ const ProductTopDetails = ({ product }) => {
         <div className="flex items-center">
           <Button
             variant="outline"
-            className="border-r-0"
-            onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+            className="border-r-0 cursor-not-allowed "
+            // onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+            onClick={()=>decreaseAmountNotZero(id)}
           >
             <IoMdRemove/>
           </Button>
-          <Button variant="outline" className="hover:bg-transparent cursor-default">1</Button>
+          <Button variant="outline" className="hover:bg-transparent cursor-default">{itemAmount}</Button>
           <Button
             variant="outline"
-            className="border-l-0"
-            onClick={() => setQuantity((prev) => prev + 1)}
+            className="border-l-0 cursor-not-allowed"
+            // onClick={() => setQuantity((prev) => prev + 1)}
+            onClick={()=>increaseAmount(id)}
           >
             <IoMdAdd/>
           </Button>
@@ -123,14 +126,14 @@ const ProductTopDetails = ({ product }) => {
       <hr className="w-[70%]" />
       <div className="flex items-center gap-5 py-6">
         <p className="text-[32px] font-bold text-[#CE0000]">
-          ${product.newPrice}
+          ${newPrice}
         </p>
         <div className="flex gap-2">
           <Button variant="default" size="">
             BUY NOW
           </Button>
           <Button
-            onClick={() => addToCart(product, product.id)}
+            onClick={() => addToCart(product, id)}
             variant="outline"
             size=""
           >

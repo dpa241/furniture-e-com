@@ -1,6 +1,6 @@
 import { ProductContext } from "@/context/ProductContext";
 import { useContext } from "react";
-import ProductCard from "../CommonProduct/ProductCard";
+import ProductCard from "../../Shared/CommonProduct/ProductCard";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 

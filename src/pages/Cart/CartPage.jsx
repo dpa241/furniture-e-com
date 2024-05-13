@@ -3,11 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import React, { useContext, useState } from "react";
 // import { useState } from "react";
-import OrderSumary from "./OrderSumary";
 import { CartContext } from "@/context/CartContext";
 import { X } from "lucide-react";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { ScrollArea } from "@/components/ui/scroll-area"
+import OrderSumary from "./OrderSumary";
 
 
 const CartPage = () => {

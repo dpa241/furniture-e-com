@@ -1,4 +1,4 @@
-import ProductCard from "@/components/main/CommonProduct/ProductCard";
+import ProductCard from "@/pages/Shared/CommonProduct/ProductCard";
 // import FeatureCard from "@/components/main/TrashCode/FeaturedProducts/FeatureCard";
 import { ProductContext } from "@/context/ProductContext";
 import React, { useContext } from "react";
@@ -7,11 +7,12 @@ import { useParams } from "react-router-dom";
 const PopularPage = () => {
   const { products } = useContext(ProductContext);
   const {catName} = useParams()
+  console.log(catName);
 
   const categoryData = products.filter((item) => {
     return item.category === catName;
   });
-
+console.log(categoryData);
 
   return (
     <div className="container mx-auto py-[150px]">

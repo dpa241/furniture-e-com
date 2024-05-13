@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Button } from "@/components/ui/button";
+// import banner from '../../../assets/bannerImg.png'
 import banner from '../../../assets/bannerImg.png'
 
 const Banner = () => {

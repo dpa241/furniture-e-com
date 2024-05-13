@@ -4,7 +4,7 @@ const CartDescriptions = () => {
     const [quantity, setQuantity] = useState(1);
   return (
     <div className="w-2/3 ">
-          <div className="flex justify-between  border-b-[1px] pb-5">
+          {/* <div className="flex justify-between  border-b-[1px] pb-5">
             <div className="max-w-[600px]">
               <div className="flex items-center gap-4">
                 <img
@@ -47,7 +47,7 @@ const CartDescriptions = () => {
               <span className="self-end text-red-600 cursor-pointer">X</span>
               <span className="text-xl font-bold">$1723.21</span>
             </div>
-          </div>
+          </div> */}
           {/* <div className="flex justify-between  border-b-[1px] py-5">
             <div className="max-w-[600px]">
               <div className="flex items-center gap-4">

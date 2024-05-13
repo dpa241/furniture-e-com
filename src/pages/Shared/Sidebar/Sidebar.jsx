@@ -5,6 +5,7 @@ import { IoMdArrowForward } from "react-icons/io";
 import CartItem from "../CartItem/CartItem";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Sidebar = () => {
   const { sidebarOpen, handleCloseSidebar } = useContext(SidebarContext);
@@ -14,29 +15,36 @@ const Sidebar = () => {
     <div
       className={`${
         sidebarOpen ? "right-0" : "-right-full"
-      } w-full bg-white fixed top-0 h-screen shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-50 px-4 lg:px-[35px]`}
+      } w-full bg-white fixed top-0 h-screen flex flex-col justify-between shadow-2xl md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-50 px-4 py-4 lg:px-[35px]`}
     >
-      <div className="flex justify-between items-center py-6 border-b">
-        <div className="uppercase font-semibold text-sm">Shopping Bag (0)</div>
-        <div
-          onClick={handleCloseSidebar}
-          className="w-8 h-8 flex items-center justify-center cursor-pointer"
-        >
-          <IoMdArrowForward className="text-2xl" />
+      <div className="h-[90%]">
+        <div className=" flex justify-between items-center py-3 border-b">
+          <div className="uppercase font-semibold text-sm">
+            Shopping Bag (0)
+          </div>
+          <div
+            onClick={handleCloseSidebar}
+            className="w-8 h-8 flex items-center justify-center cursor-pointer"
+          >
+            <IoMdArrowForward className="text-2xl" />
+          </div>
         </div>
-      </div>
-      <div className="h-[90%] flex flex-col justify-between">
-        <div>
-          {cart.map((item) => {
+        <ScrollArea className="h-[90%] pb-5 pr-5">
+         {cart.map((item) => {
             return (
               <div key={item.id} className="">
                 <CartItem item={item} className="" />
               </div>
             );
           })}
-        </div>
+        </ScrollArea>
+      </div>
+      <div className="flex flex-col justify-between">
         <div className="space-y-5">
-          <Button variant="outline" className="w-full rounded-none font-semibold border-0 border-t-2 hover:bg-transparent">
+          <Button
+            variant="outline"
+            className="w-full rounded-none font-semibold border-0 border-t-2 hover:bg-transparent"
+          >
             $ {parseFloat(total).toFixed(2)}
           </Button>
           <div className="flex gap-2">

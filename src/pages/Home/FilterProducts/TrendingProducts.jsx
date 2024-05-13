@@ -1,21 +1,21 @@
 import React, { useContext, useState } from "react";
-import ProductCard from "../CommonProduct/ProductCard";
+import ProductCard from "../../Shared/CommonProduct/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ProductContext } from "@/context/ProductContext";
 
-const NewProducts = () => {
-  const { newData } = useContext(ProductContext);
-
+const TrendingProducts = () => {
+  const { trendingData } = useContext(ProductContext);
   return (
     <>
       <div className="col-span-2 grid grid-cols-4 gap-5">
-        {newData?.slice(0, 4).map((item) => (
+        {trendingData?.slice(0, 4).map((item) => (
           <ProductCard item={item} key={item.id} />
         ))}
       </div>
+
       <div className="flex justify-center ">
-        <Link to={`/popular/new`}>
+        <Link to={`/popular/trending`}>
           <Button
             onClick={""}
             variant="link"
@@ -25,8 +25,7 @@ const NewProducts = () => {
           </Button>
         </Link>
 
-        
-        {/* {newData?.slice(0, 1).map((item) => {
+        {/* {trendingData?.slice(0, 1).map((item) => {
           return (
             <Link key={item.id} to={`/popular/${item.category}`}>
               <Button
@@ -44,4 +43,4 @@ const NewProducts = () => {
   );
 };
 
-export default NewProducts;
+export default TrendingProducts;

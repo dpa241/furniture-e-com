@@ -1,12 +1,12 @@
 import React from "react";
 // import Image from "/products/featureprod3.png";
-import { categoryData } from "@/data";
-import Product from "../Categories/Product";
+import { productData } from "@/data";
+import Product from "./Product";
 const GridView = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-5 max-w-sm mx-auto md:max-w-none lg:mx-0">
-      {categoryData.map((product, index) => (
-        <Product key={index} product={product} isLarge={product.isLarge}/>
+      {productData?.slice(0, 5).map((product, index) => (
+        <Product key={index} product={product}/>
       ))}
 
       {/* =================================== */}

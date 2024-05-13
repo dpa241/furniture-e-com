@@ -1,20 +1,21 @@
 
 // Router
 import { BrowserRouter as Router, Route,Routes } from "react-router-dom"
-import Home from "./pages/Home/Home"
+
 import ProductDetails from "./pages/ProductDetails/ProductDetails"
-import Header from "./components/main/Header/Header"
-import Footer from "./components/main/Footer/Footer"
+import Header from "./pages/Shared/Header/Header"
+import Footer from "./pages/Shared/Footer/Footer"
 import CartPage from "./pages/Cart/CartPage"
-import Sidebar from "./components/main/Sidebar/Sidebar"
+import Sidebar from "./pages/Shared/Sidebar/Sidebar"
 import LogIn from "./pages/SignUpAndSignIn/LogIn/LogIn"
 import SignUp from "./pages/SignUpAndSignIn/SignUp/SignUp"
 import Profile from "./pages/Profile/Profile"
 import PopularPage from "./pages/PopularPage/PopularPage"
+import Category from "./pages/CategoryPage/Category"
+import Home from "./pages/Home/Home/Home"
 
 
 function App() {
-
   return (
     <div className="text-[#2F302C]">
       <Router>
@@ -23,7 +24,8 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/product/:id" element={<ProductDetails/>}/>
-          <Route path="/category/:id"/>
+          <Route path="/category/:catName" element={<Category/>}/>
+          {/* <Route path="/category/:id"/> */}
           <Route path="/cartpage" element={<CartPage/>}/>
           <Route path="/popular/:catName" element={<PopularPage/>}/>
           <Route path="/profile" element={<Profile/>}/>
