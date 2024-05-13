@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
-import ProductImg from "./ProductDetails/ProductImg";
-import ProductTopDetails from "./ProductDetails/ProductTopDetails";
+import ProductImg from "./ProductTop/ProductImg";
+import ProductTopDetails from "./ProductTop/ProductTopDetails";
 import ProductDescription from "./ProductDescription/ProductDescription";
 import Review from "./Review/Review";
 import { useParams } from "react-router-dom";

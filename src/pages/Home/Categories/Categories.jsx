@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "/products/featureprod3.png";
-import Sidebar from "./Sidebar";
+
+// components
 import GridView from "./GridView";
+import SideMenu from "./SideMenu";
 // import { Separator } from "@/components/ui/separator";
 
 
@@ -47,7 +47,7 @@ const Categories = () => {
       
       <div className="flex">
         <div className="w-1/4">
-          <Sidebar/>
+          <SideMenu/>
         </div>
         <div className="w-3/4">
           <GridView/>

@@ -2,7 +2,7 @@
 // Router
 import { BrowserRouter as Router, Route,Routes } from "react-router-dom"
 
-import ProductDetails from "./pages/ProductDetails/ProductDetails"
+import ProductDetails from "./pages/SingleProduct/ProductDetails"
 import Header from "./pages/Shared/Header/Header"
 import Footer from "./pages/Shared/Footer/Footer"
 import CartPage from "./pages/Cart/CartPage"
@@ -10,7 +10,7 @@ import Sidebar from "./pages/Shared/Sidebar/Sidebar"
 import LogIn from "./pages/SignUpAndSignIn/LogIn/LogIn"
 import SignUp from "./pages/SignUpAndSignIn/SignUp/SignUp"
 import Profile from "./pages/Profile/Profile"
-import PopularPage from "./pages/PopularPage/PopularPage"
+import PopularPage from "./pages/NewTrenFeatPage/NewTrendFeatPage"
 import Category from "./pages/CategoryPage/Category"
 import Home from "./pages/Home/Home/Home"
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Product = ({ product }) => {
+const CategoryProduct = ({ product }) => {
   return (
     <div
       className={`${
@@ -30,4 +30,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default CategoryProduct;

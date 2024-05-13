@@ -4,7 +4,7 @@ import { ProductContext } from "@/context/ProductContext";
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 
-const PopularPage = () => {
+const NewTrendFeatPage = () => {
   const { products } = useContext(ProductContext);
   const {catName} = useParams()
   console.log(catName);
@@ -27,4 +27,4 @@ console.log(categoryData);
   );
 };
 
-export default PopularPage;
+export default NewTrendFeatPage;

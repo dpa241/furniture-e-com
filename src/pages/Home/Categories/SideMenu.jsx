@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import { sidebarData } from '@/data';
-const Sidebar = () => {
+const SideMenu = () => {
   return (
     <>
         <ul className="h-full flex flex-col justify-between px-2">
@@ -16,4 +16,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default SideMenu;
