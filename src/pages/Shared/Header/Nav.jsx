@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { navigationData } from "@/data";
 
-const menuList = ['home','shop','about','contact'];
+// const menuList = ['home','shop','about','contact'];
 
 const Nav = () => {
   return (
     <nav>
       <ul className="hidden lg:flex gap-x-6">
-        {menuList.map((menuItem,index) => (
-          <li key={index}>
-            <a href="#" className="uppercase font-medium text-sm relative hover:text-primary transition-all">{menuItem}</a>
-          </li>
+        {navigationData.map((menuItem,index) => (
+            <Link key={index} to={menuItem.href} className="uppercase font-medium text-sm relative hover:text-primary transition-all">{menuItem.name}
+            </Link>
         ))}
       </ul>
     </nav>

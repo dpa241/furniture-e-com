@@ -1,28 +1,39 @@
 import React, { useState } from "react";
 import productImg from "../../../assets/Product detail/Img.png";
-import NewImg1 from '/products/new1.jpg'
-import NewImg2 from '/products/new2.jpg'
-import NewImg3 from '/products/new3.jpg'
-const ProductImg = () => {
-  const [selectedImg,setSelectedImg] = useState(productImg)
+import NewImg1 from "/products/new1.jpg";
+import NewImg2 from "/products/new2.jpg";
+import NewImg3 from "/products/new3.jpg";
+const ProductImg = ({ selectedProduct }) => {
+  const [selectedImg,setSelectedImg] = useState(selectedProduct.images.mainImg)
   return (
-    <div className="w-1/2 flex flex-col items-center">
-      <div className="relative bg-product_shape w-[450px] h-[450px] bg-no-repeat">
+    <div className="w-1/2 flex flex-col items-center flex-1">
+      <div className="relative flex items-center justify-center h-[350px] w-[350px]">
+        <div className="h-full w-full bg-[#F6F6F6]"></div>
         <img
           src={selectedImg}
           alt=""
-          className="absolute left-10 top-28 w-[320px]"
+          className="absolute h-[320px] w-[320px] object-cover"
         />
       </div>
       <div className="flex gap-1 pt-10">
-        <img 
-          src={NewImg1} 
-          alt="" 
-          className="w-[70px] h-[70px] object-cover cursor-pointer " 
-          onClick={(e)=>setSelectedImg(NewImg1)}
-          />
-        <img src={NewImg2} alt="" className="w-[70px] h-[70px] object-cover cursor-pointer" onClick={(e)=>setSelectedImg(NewImg2)}  />
-        <img src={NewImg3} alt="" className="w-[70px] h-[70px] object-cover cursor-pointer" onClick={(e)=>setSelectedImg(NewImg3)} />
+        <img
+          src={selectedProduct.images.subImg1}
+          alt=""
+          className="w-[70px] h-[70px] bg-[#F6F6F6] object-cover cursor-pointer "
+          onClick={() => setSelectedImg(selectedProduct.images.subImg1)}
+        />
+        <img
+          src={selectedProduct.images.subImg2}
+          alt=""
+          className="w-[70px] h-[70px] bg-[#F6F6F6] object-cover cursor-pointer"
+          onClick={() => setSelectedImg(selectedProduct.images.subImg1mg2)}
+        />
+        <img
+          src={selectedProduct.images.subImg3}
+          alt=""
+          className="w-[70px] h-[70px] bg-[#F6F6F6] object-cover cursor-pointer"
+          onClick={() => setSelectedImg(selectedProduct.images.subImg3)}
+        />
       </div>
     </div>
   );

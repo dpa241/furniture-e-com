@@ -5,27 +5,48 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { CartContext } from "@/context/CartContext";
 import { Link, useParams } from "react-router-dom";
 
-const ProductCard = ({item}) => {
-    const {addToCart} = useContext(CartContext)
+const ProductCard = ({ item }) => {
+  console.log(item?.images?.categoryImg);
+  const { addToCart } = useContext(CartContext);
   return (
-    <div className="col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden">
-      <div className="relative ">
-        <div className="overflow-hidden relative w-[312px] h-[312px]">
-          {item.isNew && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-primary text-white  text-sm">New</span>}
-          {item.isOnSale && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-orange-500 text-white  text-sm">Sale</span>}
-          <Link to={`/product/${item.id}`}>
-          <img src={item.img} alt="" className="absolute object-cover" />
-          <img src={item.imgAlt} alt="" className="absolute opacity-0 hover:opacity-100 object-cover" />
-          </Link>
+    <div className="relative col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden bg-[#F6F6F6]">
+      <div className="">
+        <div className="overflow-hidden flex justify-center items-center w-[312px]  h-[350px] ">
+          <div className="absolute top-2 left-2 z-30">
+            {item.isNew && (
+              <span className="py-[3px] px-[8px]  bg-primary text-white  text-sm">
+                New
+              </span>
+            )}
+            {item.isOnSale && (
+              <span className="py-[3px] px-[8px] z-30 bg-orange-500 text-white  text-sm">
+                Sale
+              </span>
+            )}
+          </div>
+          <div className="w-full h-full">
+            <Link to={`/product/${item.id}`}>
+              <img
+                src={item.images?.mainImg}
+                alt=""
+                className="object-cover"
+              />
+              <img
+                src={item.images?.imgAlt}
+                alt=""
+                className=" object-cover bg-white opacity-0 hover:opacity-100 "
+              />
+            </Link>
+          </div>
         </div>
-        <div className="flex justify-between items-center pt-3">
+        <div className="flex justify-between items-center ">
           <div>
             <h2 className="text-primary ">{item.title}</h2>
             <span className="text-[18px] font-semibold">${item.newPrice}</span>
           </div>
           <div>
             <Button
-              onClick={()=>addToCart(item,item.id)}
+              onClick={() => addToCart(item, item.id)}
               variant="cartBtn"
               className="group-hover:bg-primary group-hover:text-white"
             >
@@ -40,7 +61,7 @@ const ProductCard = ({item}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

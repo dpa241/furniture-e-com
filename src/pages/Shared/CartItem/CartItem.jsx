@@ -6,7 +6,7 @@ import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const CartItem = ({ item }) => {
-  const { id, title, img, amount, newPrice } = item;
+  const { id, title, amount, newPrice } = item;
   const { removeFromCart, increaseAmount, decreaseAmount,decreaseAmountNotZero } =
     useContext(CartContext);
   return (
@@ -15,7 +15,7 @@ const CartItem = ({ item }) => {
         {/* Image */}
         <div>
           <Link to={`/product/${id}`}>
-            <img src={img} alt="" className="max-w-[80px]" />
+            <img src={item?.images?.mainImg} alt="" className="max-w-[80px]" />
           </Link>
         </div>
         <div className="w-full space-y-3">

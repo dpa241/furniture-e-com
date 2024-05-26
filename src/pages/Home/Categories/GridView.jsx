@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Image from "/products/featureprod3.png";
 import { productData } from "@/data";
 import Product from "./CategoryProduct";
+import CategoryProduct from "./CategoryProduct";
+import { ProductContext } from "@/context/ProductContext";
 const GridView = () => {
+  const {products} = useContext(ProductContext)
+  console.log(products);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-5 max-w-sm mx-auto md:max-w-none lg:mx-0">
-      {productData?.slice(0, 5).map((product, index) => (
-        <Product key={index} product={product}/>
+    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-5 max-w-sm mx-auto md:max-w-none lg:mx-0">
+      {products?.slice(0,5).map((product, index) => (
+        <CategoryProduct key={index} product={product} />
       ))}
 
       {/* =================================== */}

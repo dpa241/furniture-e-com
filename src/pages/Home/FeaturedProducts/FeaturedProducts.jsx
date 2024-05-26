@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const FeaturedProducts = () => {
   const { featuredData } = useContext(ProductContext);
+  console.log(featuredData);
   return (
     <div className="container mx-auto relative">
       <div className="flex justify-center md:justify-start py-8">

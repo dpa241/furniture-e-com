@@ -23,7 +23,6 @@ const FilterProducts = () => {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="trending">
-          {/* Trending Products*/}
           <TrendingProducts />
         </TabsContent>
         <TabsContent value="new" className="">

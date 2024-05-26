@@ -1,36 +1,48 @@
-import React, { useContext } from "react";
-
+// import React, { useState } from "react";
+import productImg from "../../assets/Product detail/Img.png";
+import NewImg1 from "/products/new1.jpg";
+import NewImg2 from "/products/new2.jpg";
+import NewImg3 from "/products/new3.jpg";
+import { Button } from "@/components/ui/button";
+import { FaStar, FaRegStar, FaRegHeart } from "react-icons/fa6";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+// import { CartContext } from "@/context/CartContext";
+import { IoMdAdd, IoMdRemove } from "react-icons/io";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { ProductContext } from "@/context/ProductContext";
 import ProductImg from "./ProductTop/ProductImg";
 import ProductTopDetails from "./ProductTop/ProductTopDetails";
 import ProductDescription from "./ProductDescription/ProductDescription";
 import Review from "./Review/Review";
-import { useParams } from "react-router-dom";
-import { ProductContext } from "@/context/ProductContext";
-import { CartContext } from "@/context/CartContext";
 
 const ProductDetails = () => {
-  const {id} = useParams()
+  const { id } = useParams();
+  const { products } = useContext(ProductContext);
   console.log(id);
-  const {products} = useContext(ProductContext)
-  // const {addToCart} = useContext(CartContext)
 
-  const product = products.find(item => {
-    return item.id = id
-  })
-
-  if(!product){
-    <div>Loading.......</div>
+  const selectedProduct = products.find((item) => {
+    return item.id == id;
+  });
+  if (!selectedProduct) {
+    <div>Loading.......</div>;
   }
-  console.log(id);
   return (
-    <section className="container mx-auto pt-[92px]">
-      <div className="flex items-center py-10">
-        <ProductImg product={product}/>
-        <ProductTopDetails product={product}/>
+    <div>
+      <div className="flex h-[80vh] items-center">
+        <ProductImg selectedProduct={selectedProduct} />
+        <ProductTopDetails selectedProduct={selectedProduct} />
       </div>
-      <ProductDescription product={product}/>
-      <Review product={product}/>
-    </section>
+      <ProductDescription />
+      <Review />
+    </div>
   );
 };
 

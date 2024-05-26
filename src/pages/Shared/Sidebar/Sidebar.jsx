@@ -9,7 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Sidebar = () => {
   const { sidebarOpen, handleCloseSidebar } = useContext(SidebarContext);
-  const { cart, clearCart, total } = useContext(CartContext);
+  const { cart, clearCart, total,itemAmount } = useContext(CartContext);
   // console.log(total);
   return (
     <div
@@ -20,7 +20,7 @@ const Sidebar = () => {
       <div className="h-[90%]">
         <div className=" flex justify-between items-center py-3 border-b">
           <div className="uppercase font-semibold text-sm">
-            Shopping Bag (0)
+            Shopping Bag ({itemAmount})
           </div>
           <div
             onClick={handleCloseSidebar}

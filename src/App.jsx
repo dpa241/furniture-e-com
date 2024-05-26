@@ -13,6 +13,8 @@ import Profile from "./pages/Profile/Profile"
 import PopularPage from "./pages/NewTrenFeatPage/NewTrendFeatPage"
 import Category from "./pages/CategoryPage/Category"
 import Home from "./pages/Home/Home/Home"
+import NewTrendFeatPage from "./pages/NewTrenFeatPage/NewTrendFeatPage"
+import Shop from "./pages/Shop/Shop"
 
 
 function App() {
@@ -25,9 +27,10 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/product/:id" element={<ProductDetails/>}/>
           <Route path="/category/:catName" element={<Category/>}/>
+          <Route path="/shop" element={<Shop/>}/>
           {/* <Route path="/category/:id"/> */}
           <Route path="/cartpage" element={<CartPage/>}/>
-          <Route path="/popular/:catName" element={<PopularPage/>}/>
+          <Route path="/popular/:catName" element={<NewTrendFeatPage/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/login" element={<LogIn/>}/>

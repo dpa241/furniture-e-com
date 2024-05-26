@@ -4,7 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { useParams } from "react-router-dom";
 
-const Card = ({ item }) => {
+const TestCard = ({ item }) => {
 
   return (
     <div className="col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden">
@@ -12,7 +12,7 @@ const Card = ({ item }) => {
         <div className="overflow-hidden relative w-[312px] h-[312px]">
           {item.isNew && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-primary text-white  rounded text-sm">New</span>}
           {item.isOnSale && <span className="absolute top-2 left-2 py-[3px] px-[8px] z-30 bg-orange-500 text-white  rounded text-sm">Sale</span>}
-          <img src={item.img} alt="" className="absolute" />
+          <img src={item.img.mainImg} alt="" className="absolute" />
           <img src={item.imgAlt} alt="" className="absolute opacity-0 hover:opacity-100" />
         </div>
         <div className="flex justify-between items-center pt-3">
@@ -39,4 +39,4 @@ const Card = ({ item }) => {
   );
 };
 
-export default Card;
+export default TestCard;

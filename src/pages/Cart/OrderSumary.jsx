@@ -1,16 +1,15 @@
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { CartContext } from '@/context/CartContext'
-import { Input } from 'postcss'
-import React, { useContext } from 'react'
+import { Input } from "@/components/ui/input";
+import { useContext } from 'react'
 
 const OrderSumary = () => {
   const { cart, clearCart, total } = useContext(CartContext);
-  const tax = parseFloat(total * 0.15).toFixed(2);
-
-  
   const discount = parseFloat(total * 0.1).toFixed(2);
-  const maxTotal = total+tax+discount
+  const tax = parseFloat(((total -discount)* 0.15).toFixed(2));
+  const maxTotal = total-discount+tax
+  
   return (
     // <div className="w-1/3 space-y-8 px-16 ">
     //       <div className="space-y-5">
