@@ -15,6 +15,8 @@ import Category from "./pages/CategoryPage/Category"
 import Home from "./pages/Home/Home/Home"
 import NewTrendFeatPage from "./pages/NewTrenFeatPage/NewTrendFeatPage"
 import Shop from "./pages/Shop/Shop"
+import About from "./pages/About/About"
+import { Contact } from "./pages/Contact/Contact"
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/cartpage" element={<CartPage/>}/>
           <Route path="/popular/:catName" element={<NewTrendFeatPage/>}/>
           <Route path="/profile" element={<Profile/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/login" element={<LogIn/>}/>
         </Routes>

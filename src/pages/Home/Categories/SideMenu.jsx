@@ -1,33 +1,47 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 import { Button } from "@/components/ui/button";
-import { sidebarData } from '@/data';
-import { Link } from 'react-router-dom';
-import { ProductContext } from '@/context/ProductContext';
-import { productData } from '@/data'
+import { sidebarData } from "@/data";
+import { Link } from "react-router-dom";
+import { ProductContext } from "@/context/ProductContext";
+import { productData } from "@/data";
+// import { Item } from '@radix-ui/react-select';
 
-
+const uniqueItems = (arr) => {
+  const uniqueVal = new Set();
+  return arr.filter((item) => {
+    const key = `${item.category}-${item.images.catIcon}`;
+    if (uniqueVal.has(key)) {
+      return false;
+    } else {
+      uniqueVal.add(key);
+      return true;
+    }
+  });
+};
 
 const SideMenu = () => {
-  const groupByCategory = (productData) =>{
-    return productData.reduce((acc,product)=>{
-      if(!acc[product.category]){
-        acc[product.category] = []
-      }
-      acc[product.category].push(product)
-      return acc
-    },{})
-  }
-  
+  // Repeated Category Filter
+  // const groupByCategory = (productData) =>{
+  //   return productData.reduce((acc,product)=>{
+  //     if(!acc[product.category]){
+  //       acc[product.category] = []
+  //     }
+  //     acc[product.category].push(product)
+  //     return acc
+  //   },{})
+  // }
+  // const groupedProducts = groupByCategory(productData)
+  // =======================================================
 
-
-  const groupedProducts = groupByCategory(productData)
-
-  console.log(groupedProducts);
+  // Reapeated Category Filter with other object
+  const uniqueItemList = uniqueItems(productData);
+  console.log(uniqueItemList);
 
   return (
     <>
-        <div className="h-full flex flex-col pr-5">
-          {
+      <div className="h-full flex flex-col ">
+        {/* Repeated Category Filter */}
+        {/* {
             Object.keys(groupedProducts).map((category)=>(
               <div key={category.id} className=" bg-white cursor-pointer border-b p-3  font-medium hover:text-primary hover:bg-slate-200 transition-all duration-300">
                   <Link to={`category/${category}`}>
@@ -36,11 +50,24 @@ const SideMenu = () => {
               </div>
               
             ))
-          }
-          {/* <Button className="w-[200px]">All Category</Button> */}
-          </div>
+          } */}
+
+        {uniqueItemList.slice(0,10).map((item, index) => {
+          return (
+            <div key={index} className=" flex items-center gap-4 mb-3 shadow-md bg-white cursor-pointer border-b p-3  font-medium hover:text-primary hover:bg-slate-200 transition-all duration-300">
+              <img src={item.images.catIcon} alt="" className="w-5 h-5.5" />
+              <h2 className="">{item.name}</h2>
+            </div>
+          );
+        })}
+        <div className="w-full">
+        <Link to={'/shop'} className="w-full">
+          <Button className="w-full">All Category</Button>
+        </Link>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default SideMenu;

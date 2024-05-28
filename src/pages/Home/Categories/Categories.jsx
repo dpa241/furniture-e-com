@@ -46,7 +46,7 @@ const Categories = () => {
       {/* This is Method 2 */}
       
       <div className="flex">
-        <div className="w-1/4">
+        <div className="w-1/4 pr-10">
           <SideMenu/>
         </div>
         <div className="w-3/4">

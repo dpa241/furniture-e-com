@@ -29,7 +29,7 @@ const ProductCard = ({ item }) => {
               <img
                 src={item.images?.mainImg}
                 alt=""
-                className="object-cover"
+                className="object-cover h-full"
               />
               <img
                 src={item.images?.imgAlt}
@@ -39,7 +39,7 @@ const ProductCard = ({ item }) => {
             </Link>
           </div>
         </div>
-        <div className="flex justify-between items-center ">
+        <div className="flex justify-between items-center py-2 ">
           <div>
             <h2 className="text-primary ">{item.title}</h2>
             <span className="text-[18px] font-semibold">${item.newPrice}</span>

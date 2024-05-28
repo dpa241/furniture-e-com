@@ -178,6 +178,7 @@ export const productData = [
       mainImg : '/product/swivel.png',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/swivelchair-4.jpg',
+      catIcon: '/icon/swivel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -200,6 +201,7 @@ export const productData = [
       mainImg : '/product/rocking.png',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/rocking-.jpg',
+      catIcon:'/icon/rocking.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -222,6 +224,7 @@ export const productData = [
       mainImg : '/product/club1.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/gaming-1.jpeg',
+      catIcon: '/icon/gaming.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -241,9 +244,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/wishbone-1.jpg',
+      mainImg : '/product/barrel-1 (2).jpg',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/barrel.jpg',
+      catIcon:'/icon/barrel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -256,16 +260,17 @@ export const productData = [
   },
     {
     id: 1005,
-    highlited: "new",
-    category: 'club-chair',
+    highlited: "/sofa", //========================Not Categorized//
+    category: 'sofa',
     name: "Sofa",
     title: "Sofa Stool Chair ",
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/simple-2.jpg',
+      mainImg : '/product/sofashort.jpeg',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/sofashort.jpeg',
+      catIcon:'/icon/sofa.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -285,9 +290,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/gaming1.jpg',
+      mainImg : '/product/club3.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
       categoryImg: '/product/clubchair-1.png',
+      catIcon: '/icon/club.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -307,9 +313,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/arm2.jpg',
+      mainImg : '/product/swivel-7.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/swivelchair-2.png' ,
+      categoryImg: '/product/swivelchair-2.png',
+      catIcon: '/icon/swivel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -329,9 +336,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/wishbone-2.jpg  ',
+      mainImg : '/product/barrel-2 (2).jpg  ',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/barrelchair-2.png' ,
+      categoryImg: '/product/barrelchair-2.png',
+      catIcon:'/icon/barrel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -353,7 +361,8 @@ export const productData = [
     images: {
       mainImg : '/product/rockingchair-2.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/rockingchair-2.png' ,
+      categoryImg: '/product/rockingchair-2.png',
+      catIcon:'/icon/rocking.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -375,7 +384,8 @@ export const productData = [
     images: {
       mainImg : '/product/gamingchair-3.png',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/gamingchair-4.png' ,
+      categoryImg: '/product/gamingchair-4.png',
+      catIcon:'/icon/gaming.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -395,9 +405,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/trending1.jpg',
+      mainImg : '/product/barrel-7.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/barrelchair-5.png' ,
+      categoryImg: '/product/barrelchair-5.png',
+      catIcon:'/icon/barrel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -417,9 +428,10 @@ export const productData = [
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/trending1.jpg',
+      mainImg : '/product/gaming1.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/gamingchair-4.png' ,
+      categoryImg: '/product/gamingchair-4.png',
+      catIcon:'/icon/gaming.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -441,7 +453,8 @@ export const productData = [
     images: {
       mainImg : '/product/tulipchair-1.png',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/tulipchair-1.png' ,
+      categoryImg: '/product/tulipchair-1.png',
+      catIcon:'/icon/tulip.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -463,7 +476,8 @@ export const productData = [
     images: {
       mainImg : '/product/clubchair-1.png',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/clubchair-1.png' ,
+      categoryImg: '/product/clubchair-1.png',
+      catIcon:'/icon/club.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -485,7 +499,8 @@ export const productData = [
     images: {
       mainImg : '/product/barrelchair-5.png',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/barrelchair-5.png' ,
+      categoryImg: '/product/barrelchair-5.png',
+      catIcon: '/icon/barrel.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -497,17 +512,18 @@ export const productData = [
     newPrice: 22,
   },
     {
-    id: 1014,
+    id: 1015,
     highlited: "trending",
-    category: 'swivel-chair',
-    name: "Swivel",
-    title: "Swivel Stool Chair ",
+    category: 'arm-chair',
+    name: "Arm",
+    title: "Arm Stool Chair ",
     description: "Description-1",
     Review: "Review",
     images: {
-      mainImg : '/product/swivel1.jpg',
+      mainImg : '/product/arm2.jpg',
       // mainImgAlt:'/products/feat5rvg.png',
-      categoryImg: '/product/swivelchair-4.png' ,
+      categoryImg: '/product/arm1.jpg',
+      catIcon: '/icon/arm.png',
       subImg1: '/products/feat4rvg.png',
       subImg2: '/products/feat3rvg.png',
       subImg3: '/products/feat2rvg.png'
@@ -518,34 +534,195 @@ export const productData = [
     oldPrice: 35,
     newPrice: 22,
   },
-  {
-    id: 1015,
-    category: 'arm-chair',
-  },
-  {
+    {
     id: 1016,
+    highlited: "trending",
     category: 'adirondack-chair',
+    name: "Adirondack",
+    title: "Swivel Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/adirondack.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/adirondack.jpg',
+      catIcon: '/icon/adiron.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
   },
-  {
+    {
     id: 1017,
+    highlited: "trending",
     category: 'bench-chair',
+    name: "Bench",
+    title: "Bench Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/bench.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/bench.jpg',
+      catIcon: '/icon/bench.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
   },
-  {
+    {
     id: 1018,
+    highlited: "trending",
     category: 'wishbone-chair',
+    name: "Wishbone",
+    title: "Wishbone Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/wishbone-2.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/wishbone-2.png',
+      catIcon: '/icon/wishbone.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
   },
-  {
+    {
     id: 1019,
-    category: 'Cantilever-chair',
+    highlited: "trending",
+    category: 'cantilever-chair',
+    name: "Cantilever",
+    title: "Cantilever Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/cantilever.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/cantilever.png',
+      catIcon: '/icon/cantilever.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
   },
-  {
+    {
     id: 1020,
+    highlited: "trending",
     category: 'deck-chair',
+    name: "Deck",
+    title: "Deck Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/deck.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/deck.png',
+      catIcon: '/icon/deck.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
   },
-  {
+    {
     id: 1021,
+    highlited: "trending",
     category: 'monoblock-chair',
-  }
+    name: "Monoblock",
+    title: "Monoblock Stool Chair ",
+    description: "Description-1",
+    Review: "Review",
+    images: {
+      mainImg : '/product/mono.jpg',
+      // mainImgAlt:'/products/feat5rvg.png',
+      categoryImg: '/product/mono.png',
+      catIcon: '/icon/mono.png',
+      subImg1: '/products/feat4rvg.png',
+      subImg2: '/products/feat3rvg.png',
+      subImg3: '/products/feat2rvg.png'
+    },
+    isLarge: true,
+    isNew: true,
+    isOnSale: false,
+    oldPrice: 35,
+    newPrice: 22,
+  },
+  //   {
+  //   id: 1014,
+  //   highlited: "trending",
+  //   category: 'swivel-chair',
+  //   name: "Swivel",
+  //   title: "Swivel Stool Chair ",
+  //   description: "Description-1",
+  //   Review: "Review",
+  //   images: {
+  //     mainImg : '/product/swivel1.jpg',
+  //     // mainImgAlt:'/products/feat5rvg.png',
+  //     categoryImg: '/product/swivelchair-4.png',
+  //     catIcon: '/icon/swivel.png',
+  //     subImg1: '/products/feat4rvg.png',
+  //     subImg2: '/products/feat3rvg.png',
+  //     subImg3: '/products/feat2rvg.png'
+  //   },
+  //   isLarge: true,
+  //   isNew: true,
+  //   isOnSale: false,
+  //   oldPrice: 35,
+  //   newPrice: 22,
+  // },
+  // {
+  //   id: 1015,
+  //   category: 'arm-chair',
+  // },
+  // {
+  //   id: 1016,
+  //   category: 'adirondack-chair',
+  // },
+  // {
+  //   id: 1017,
+  //   category: 'bench-chair',
+  // },
+  // {
+  //   id: 1018,
+  //   category: 'wishbone-chair',
+  // },
+  // {
+  //   id: 1019,
+  //   category: 'Cantilever-chair',
+  // },
+  // {
+  //   id: 1020,
+  //   category: 'deck-chair',
+  // },
+  // {
+  //   id: 1021,
+  //   category: 'monoblock-chair',
+  // }
 
   // {
   //   id: 1,
