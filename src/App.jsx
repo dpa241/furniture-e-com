@@ -17,6 +17,7 @@ import NewTrendFeatPage from "./pages/NewTrenFeatPage/NewTrendFeatPage"
 import Shop from "./pages/Shop/Shop"
 import About from "./pages/About/About"
 import { Contact } from "./pages/Contact/Contact"
+import ScrollTop from "./pages/Shared/ScroollTop/ScrollTop"
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <div className="text-[#2F302C]">
       <Router>
         <Header/>
+        <ScrollTop/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<Home/>}/>

@@ -52,18 +52,25 @@ const SideMenu = () => {
             ))
           } */}
 
-        {uniqueItemList.slice(0,10).map((item, index) => {
+        {uniqueItemList.slice(0, 10).map((item, index) => {
           return (
-            <div key={index} className=" flex items-center gap-4 mb-3 shadow-md bg-white cursor-pointer border-b p-3  font-medium hover:text-primary hover:bg-slate-200 transition-all duration-300">
-              <img src={item.images.catIcon} alt="" className="w-5 h-5.5" />
-              <h2 className="">{item.name}</h2>
-            </div>
+            <Link
+              to={`/category/${item.category}`}
+              key={index}
+              className=" group flex items-center gap-1 mb-3 shadow-md bg-white cursor-pointer border-b   font-medium hover:text-primary hover:bg-slate-200 transition-all duration-300"
+            >
+              <div className="w-2 h-full group-hover:bg-primary transition-all duration-300"></div>
+              <div className="flex gap-3 p-3">
+                <img src={item.images.catIcon} alt="" className="w-5 h-5.5" />
+                <h2 className="">{item.name}</h2>
+              </div>
+            </Link>
           );
         })}
         <div className="w-full">
-        <Link to={'/shop'} className="w-full">
-          <Button className="w-full">All Category</Button>
-        </Link>
+          <Link to={"/shop"} className="w-full">
+            <Button className="w-full">All Category</Button>
+          </Link>
         </div>
       </div>
     </>

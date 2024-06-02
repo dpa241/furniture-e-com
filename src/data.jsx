@@ -10,7 +10,27 @@ import Client5 from '../src/assets/Client/Logo-4.png';
 import Client6 from '../src/assets/Client/Logo-5.png';
 import Client7 from '../src/assets/Client/Logo-6.png';
 
+import bannerImg1 from '../src/assets/bannerImg.png'
+import bannerImg2 from '../src/assets/file.png'
 
+
+export const sliderDate = [
+  {
+    image: bannerImg1,
+    text: "Welcome to chairy",
+    slogan: "Best Furniture Collection For Your Interior."
+  },
+  {
+    image: bannerImg2,
+    text: "Welcome to chairy",
+    slogan: "Discover Ultimate Comfort with Stylish Chairs."
+  },
+  {
+    image: bannerImg1,
+    text: "Welcome to chairy",
+    slogan: "Revolutionize Your Space with Our Modern Chairs"
+  },
+]
 export const navigationData = [
     {
         name: "Home",
