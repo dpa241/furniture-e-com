@@ -18,7 +18,7 @@ const NavIcon = () => {
     useContext(SidebarContext);
     const {itemAmount} = useContext(CartContext)
 
-    console.log(sidebarOpen);
+    // console.log(sidebarOpen);
   return (
     // <div className="hidden lg:flex gap-5">
     //   {

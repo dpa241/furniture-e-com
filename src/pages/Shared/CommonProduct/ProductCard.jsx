@@ -40,7 +40,7 @@ const ProductCard = ({ item }) => {
             </Link>
           </div>
         </div>
-        <div className="flex justify-between items-center py-3 ">
+        <div className="flex justify-between items-center py-3 px-2 ">
           <div>
             <div className="flex gap-1 text-sm ">
               <FaStar size={12} />

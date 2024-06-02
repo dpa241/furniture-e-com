@@ -29,7 +29,7 @@ const ProductDetails = () => {
   console.log(id);
 
   const selectedProduct = products.find((item) => {
-    return item.id == id;
+    return item.id == parseInt(id);
   });
   if (!selectedProduct) {
     <div>Loading.......</div>;
@@ -38,7 +38,7 @@ const ProductDetails = () => {
     <div>
       <div className="flex h-[80vh] items-center">
         <ProductImg selectedProduct={selectedProduct} />
-        <ProductTopDetails selectedProduct={selectedProduct} />
+        <ProductTopDetails selectedProduct={selectedProduct} id={id} />
       </div>
       <ProductDescription />
       <Review />

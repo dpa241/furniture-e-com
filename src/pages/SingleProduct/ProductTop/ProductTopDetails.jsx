@@ -13,17 +13,24 @@ import {
 import { CartContext } from "@/context/CartContext";
 import { IoMdAdd, IoMdRemove } from "react-icons/io";
 
-const ProductTopDetails = ({ selectedProduct }) => {
+const ProductTopDetails = ({ selectedProduct,id }) => {
   // const {id,title,newPrice} = selectedProduct
   const [quantity, setQuantity] = useState(1);
   const {
+    cart,
     addToCart,
     increaseAmount,
     decreaseAmount,
     itemAmount,
     decreaseAmountNotZero,
   } = useContext(CartContext);
-  // console.log(product.img);
+
+    const singleCartItem = cart.find(item=>{
+      return item.id === selectedProduct.id
+    })
+
+    console.log(selectedProduct.id);
+    console.log(singleCartItem);
 
   return (
     <div className="w-1/2 space-y-5 flex-1">
@@ -86,7 +93,7 @@ const ProductTopDetails = ({ selectedProduct }) => {
               variant="outline"
               className="border-r-0 "
               // onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
-              onClick={()=>decreaseAmountNotZero(selectedProduct.id)}
+              onClick={()=>decreaseAmount(selectedProduct.id)}
             >
               <IoMdRemove />
             </Button>
@@ -100,7 +107,7 @@ const ProductTopDetails = ({ selectedProduct }) => {
               variant="outline"
               className="border-l-0"
               // onClick={() => setQuantity((prev) => prev + 1)}
-              onClick={()=>increaseAmount(selectedProduct.id)}
+              onClick={()=>addToCart(selectedProduct,selectedProduct.id)}
             >
               <IoMdAdd />
             </Button>
@@ -136,7 +143,7 @@ const ProductTopDetails = ({ selectedProduct }) => {
               BUY NOW
             </Button>
             <Button
-              // onClick={() => addToCart(product, id)}
+              onClick={() => addToCart(selectedProduct, selectedProduct.id)}
               variant="outline"
               size=""
             >
