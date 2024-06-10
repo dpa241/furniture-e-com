@@ -29,8 +29,6 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
       return item.id === selectedProduct.id
     })
 
-    console.log(selectedProduct.id);
-    console.log(singleCartItem);
 
   return (
     <div className="w-1/2 space-y-5 flex-1">
@@ -92,8 +90,8 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
             <Button
               variant="outline"
               className="border-r-0 "
-              // onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
-              onClick={()=>decreaseAmount(selectedProduct.id)}
+              onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+              // onClick={()=>decreaseAmount(selectedProduct.id)}
             >
               <IoMdRemove />
             </Button>
@@ -101,13 +99,13 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
               variant="outline"
               className="hover:bg-transparent cursor-default"
             >
-              1
+              {singleCartItem ? singleCartItem.amount: 1}
             </Button>
             <Button
               variant="outline"
               className="border-l-0"
               // onClick={() => setQuantity((prev) => prev + 1)}
-              onClick={()=>addToCart(selectedProduct,selectedProduct.id)}
+              // onClick={()=>addToCart(selectedProduct,selectedProduct.id)}
             >
               <IoMdAdd />
             </Button>

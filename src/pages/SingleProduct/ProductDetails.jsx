@@ -35,8 +35,8 @@ const ProductDetails = () => {
     <div>Loading.......</div>;
   }
   return (
-    <div>
-      <div className="flex h-[80vh] items-center">
+    <div className="py-24">
+      <div className="flex items-center">
         <ProductImg selectedProduct={selectedProduct} />
         <ProductTopDetails selectedProduct={selectedProduct} id={id} />
       </div>

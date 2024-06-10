@@ -6,10 +6,20 @@ import React, { useContext, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TrendingProducts from "./TrendingProducts";
 import NewProducts from "./NewProducts";
+import { motion } from "framer-motion";
 
 const FilterProducts = () => {
   return (
-    <>
+    <motion.section
+    initial= {{opacity: 0 , y: 150}}
+    whileInView={{opacity: 1 , y:0}}
+    transition={{
+      type: 'tween',
+      delay: 0.2,
+      duration: 1.6,
+      ease: 'easeOut'
+    }}
+    >
       <Tabs
         defaultValue="trending"
         className="relative container mx-auto space-y-8"
@@ -29,7 +39,7 @@ const FilterProducts = () => {
           <NewProducts />
         </TabsContent>
       </Tabs>
-    </>
+    </motion.section>
   );
 };
 

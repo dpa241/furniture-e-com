@@ -1,7 +1,9 @@
+import { ProductContext } from '@/context/ProductContext'
 import { productData } from '@/data'
-import React from 'react'
+import React, { useContext } from 'react'
 
 const CategoryFilter = () => {
+    const {setSelectCatFilter} = useContext(ProductContext)
     const groupByCategory = (productData) =>{
         return productData.reduce((acc,product)=>{
             if(!acc[product.category]){
@@ -19,7 +21,7 @@ const CategoryFilter = () => {
             Object.keys(groupedProducts).slice(0,6).map(category=>{
                 return (
                     <div key={category.id} className='cursor-pointer font-medium hover:text-primary transition-all duration-300'>
-                        <span className='capitalize'>{category.split("-")[0]}</span>
+                        <span  className='capitalize'>{category.split("-")[0]}</span>
                     </div>
                 )
             })

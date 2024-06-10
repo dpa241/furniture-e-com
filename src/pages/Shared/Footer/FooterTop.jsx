@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaFacebook,
   FaTwitter,
@@ -9,9 +10,18 @@ import {
 import LogoIcon from "../../../assets/logo-icon.png";
 const FooterTop = () => {
   return (
-    <section className="container mx-auto ">
+    <section className="container mx-auto py-5">
       <div className="flex justify-between">
-        <div className="max-w-[300px] space-y-4">
+        <motion.div 
+        initial= {{opacity: 0 , y: 50}}
+        whileInView={{opacity: 1 , y:0}}
+        transition={{
+          type: 'tween',
+          delay: 0.2,
+          duration: 1.6,
+          ease: 'easeOut'
+        }}
+        className="max-w-[300px] space-y-4">
           <div className="flex items-center gap-2">
             <img src={LogoIcon} alt="" />
             <h3 className="font-bold text-2xl">Comforty</h3>
@@ -37,8 +47,17 @@ const FooterTop = () => {
               <FaYoutube />
             </div>
           </div>
-        </div>
-        <div className="space-y-3 text-muted-foreground">
+        </motion.div>
+        <motion.div 
+        initial= {{opacity: 0 , y: 50}}
+        whileInView={{opacity: 1 , y:0}}
+        transition={{
+          type: 'tween',
+          delay: 0.6,
+          duration: 1.6,
+          ease: 'easeOut'
+        }}
+        className="space-y-3 text-muted-foreground">
           <h2 className="text-[14px] uppercase font-medium ">Category</h2>
           <div className="flex flex-col gap-[2px] ">
             <span>Sofa</span>
@@ -48,8 +67,17 @@ const FooterTop = () => {
             <span>Wooden Chair</span>
             <span>Park Bench</span>
           </div>
-        </div>
-        <div className="space-y-3 text-muted-foreground">
+        </motion.div>
+        <motion.div 
+        initial= {{opacity: 0 , y: 50}}
+        whileInView={{opacity: 1 , y:0}}
+        transition={{
+          type: 'tween',
+          delay: 0.9,
+          duration: 1.6,
+          ease: 'easeOut'
+        }}
+        className="space-y-3 text-muted-foreground">
           <h2 className="text-[14px] uppercase font-medium ">Support</h2>
           <div className="flex flex-col gap-[2px]">
             <span>Help & Support</span>
@@ -57,8 +85,17 @@ const FooterTop = () => {
             <span>Terms & Conditions</span>
             <span>Help</span>
           </div>
-        </div>
-        <div className="space-y-3  text-muted-foreground">
+        </motion.div>
+        <motion.div 
+        initial= {{opacity: 0 , y: 50}}
+        whileInView={{opacity: 1 , y:0}}
+        transition={{
+          type: 'tween',
+          delay: 1.2,
+          duration: 1.6,
+          ease: 'easeOut'
+        }}
+        className="space-y-3  text-muted-foreground">
           <h2 className="text-[14px] uppercase font-medium">Support</h2>
           <div className="flex flex-col gap-[2px]">
             <span>Help & Support</span>
@@ -66,7 +103,7 @@ const FooterTop = () => {
             <span>Terms & Conditions</span>
             <span>Help</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

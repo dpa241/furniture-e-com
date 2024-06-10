@@ -1,14 +1,21 @@
-
 // components
+import { fadeIn, staggerContainer } from "@/variants";
 import GridView from "./GridView";
 import SideMenu from "./SideMenu";
 // import { Separator } from "@/components/ui/separator";
-
+import { motion } from "framer-motion";
 
 const Categories = () => {
   return (
-    <section className="container mx-auto space-y-8">
-      <h2 className="text-3xl font-semibold uppercase">Top Categories</h2>
+    <motion.section
+      variants={staggerContainer(0.3, 1)}
+      initial="hidden"
+      whileInView={"show"}
+      className="container mx-auto space-y-8 overflow-hidden"
+    >
+      <motion.h2 
+      variants={fadeIn('right','tween',0.5,1.1)}
+      className="text-3xl font-semibold uppercase">Top Categories</motion.h2>
 
       {/* This is Method - 1 */}
 
@@ -44,16 +51,20 @@ const Categories = () => {
       </div> */}
 
       {/* This is Method 2 */}
-      
+
       <div className="flex">
-        <div className="w-1/4 pr-10">
-          <SideMenu/>
-        </div>
-        <div className="w-3/4">
-          <GridView/>
-        </div>
+        <motion.div 
+        variants={fadeIn('right','tween',0.5,1.1)}
+        className="w-1/4 pr-10">
+          <SideMenu />
+        </motion.div>
+        <motion.div 
+        variants={fadeIn('left','tween',0.5,1.1)}
+        className="w-3/4">
+          <GridView />
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -15,7 +15,8 @@ const NewTrendFeatPage = () => {
 console.log(categoryData);
 
   return (
-    <div className="container mx-auto py-[92px]">
+    <div 
+    className="container mx-auto py-[92px]">
       <div className="bg-bg_highlight h-[300px] bg-cover bg-no-repeat bg-center relative">
       <h2 className="absolute right-32 top-32  text-5xl font-medium uppercase text-center pb-10"><span>{catName}</span> Products</h2>
       </div>

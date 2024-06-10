@@ -78,7 +78,9 @@ module.exports = {
       backgroundImage: {
         hero_shape: 'url(/hero/bg-shape.png)',
         product_shape: 'url(/shape.png)',
-        bg_highlight: 'url(/hero/bg-highlight.png)'
+        bg_highlight: 'url(/hero/bg-highlight.png)',
+        contact_bg: 'url(/hero/contactbg.jpg)',
+        contact_sofa: 'url(/hero/Img.png)',
       }
     },
   },
