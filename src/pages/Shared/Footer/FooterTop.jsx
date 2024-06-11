@@ -18,7 +18,7 @@ const FooterTop = () => {
         transition={{
           type: 'tween',
           delay: 0.2,
-          duration: 1.6,
+          duration: 0.2,
           ease: 'easeOut'
         }}
         className="max-w-[300px] space-y-4">
@@ -54,7 +54,7 @@ const FooterTop = () => {
         transition={{
           type: 'tween',
           delay: 0.6,
-          duration: 1.6,
+          duration: 0.4,
           ease: 'easeOut'
         }}
         className="space-y-3 text-muted-foreground">
@@ -74,7 +74,7 @@ const FooterTop = () => {
         transition={{
           type: 'tween',
           delay: 0.9,
-          duration: 1.6,
+          duration: 0.6,
           ease: 'easeOut'
         }}
         className="space-y-3 text-muted-foreground">
@@ -92,7 +92,7 @@ const FooterTop = () => {
         transition={{
           type: 'tween',
           delay: 1.2,
-          duration: 1.6,
+          duration: 0.8,
           ease: 'easeOut'
         }}
         className="space-y-3  text-muted-foreground">

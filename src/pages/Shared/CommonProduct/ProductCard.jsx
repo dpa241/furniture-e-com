@@ -7,7 +7,6 @@ import { CartContext } from "@/context/CartContext";
 import { Link, useParams } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
-  console.log(item?.images?.categoryImg);
   const { addToCart } = useContext(CartContext);
   return (
     <div className="relative col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden bg-[#F6F6F6]">

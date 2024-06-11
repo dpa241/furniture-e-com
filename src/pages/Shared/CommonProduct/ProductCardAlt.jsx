@@ -1,0 +1,84 @@
+import { Button } from "@/components/ui/button";
+import React from "react";
+import { FaRegStar, FaStar } from "react-icons/fa6";
+import { IoCartOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
+import { fadeIn, fadeInOut, fadeOut, staggerContainer } from "@/variants";
+const ProductCardAlt = ({ item }) => {
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="hovered"
+      animate="initial"
+      variants={{
+        initial: {},
+        hovered: {},
+      }}
+      className="relative h-[400px] border border-gray-200 rounded-md group "
+    >
+      <div className="h-[300px] bg-gray-100 ">
+        <div className="w-full h-full flex justify-center items-center ">
+          <div className="w-[275px] flex justify-center items-center mx-auto ">
+            <img src="/hero/file.png" alt="" className="max-h-[300px] group-hover:scale-110 transition duration-500 " />
+          </div>
+        </div>
+      </div>
+      <div className=" flex  h-[100px]">
+        <div className=" flex flex-col items-center justify-center  space-y-2 w-full">
+          <motion.div
+            variants={{
+              initial: { opacity: 1, y: 10 },
+              hovered: { opacity: 0, y: -20, transition: { duration: 0.5 } },
+            }}
+            className="flex gap-1 text-sm"
+          >
+            <FaStar size={12} />
+            <FaStar size={12} />
+            <FaStar size={12} />
+            <FaStar size={12} />
+            <FaRegStar size={12} />
+          </motion.div>
+          <motion.h2
+            variants={{
+              initial: { opacity: 1, y: 10 },
+              hovered: { opacity: 1, y: -10, transition: { duration: 0.5 } },
+            }}
+            clas
+            className="text-primary leading-tight "
+          >
+            {item.title}
+          </motion.h2>
+          <motion.span
+            // variants={}
+            variants={{
+              initial: { opacity: 1, y: -10 },
+              hovered: { opacity: 0, y: -50, transition: { duration: 0.5 } },
+            }}
+            className="text-[18px] font-semibold pt-3 "
+          >
+            ${item.newPrice}
+          </motion.span>
+          <motion.div
+            variants={{
+              initial: { opacity: 0, y: 10 },
+              hovered: { opacity: 1, y: -20, transition: { duration: 0.5 } },
+            }}
+            // variants={fadeIn('up','tween',0.2,1.1)}
+            className="absolute -bottom-5 w-full"
+          >
+            <Button
+              // onClick={() => addToCart(item, item.id)}
+              variant="outline"
+              className="hover:bg-primary group-hover:text-white border border-gray-200 transition-all duration-1000 w-full h-12 "
+            >
+              <span className="text-black">Add To Cart</span>
+              <IoCartOutline clas size={25} />
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+export default ProductCardAlt;

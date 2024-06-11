@@ -18,7 +18,31 @@ export const fadeIn = (direction, type, delay, duration) => {
     },
   };
 };
-
+export const fadeOut = (direction, type, delay, duration) => {
+  return {
+    hidden: {
+      x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
+      y: direction === 'up' ? 20 : direction === 'down' ? -20 : 0,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: type,
+        delay: delay,
+        duration: duration,
+        ease: 'easeOut',
+      },
+    },
+  };
+};
+export const fadeInOut = {
+  initial: { opacity: 1 },
+  hidden: { opacity: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},

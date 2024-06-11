@@ -22,7 +22,7 @@ import ScrollTop from "./pages/Shared/ScroollTop/ScrollTop"
 
 function App() {
   return (
-    <div className="text-[#2F302C]">
+    <div className="text-[#2F302C] font-primary">
       <Router>
         <Header/>
         <ScrollTop/>

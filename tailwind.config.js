@@ -10,7 +10,7 @@ module.exports = {
   prefix: "",
   theme: {
     fontFamily:{
-      primary:"Montserrat"
+      primary:"Jost",
     },
     container: {
       center: true,

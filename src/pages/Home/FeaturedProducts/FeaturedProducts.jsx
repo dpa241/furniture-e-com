@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeIn } from "@/variants";
+import ProductCardAlt from "@/pages/Shared/CommonProduct/ProductCardAlt";
 
 const FeaturedProducts = () => {
   const { featuredData } = useContext(ProductContext);
@@ -27,7 +28,8 @@ const FeaturedProducts = () => {
         </div>
         <div className="col-span-2 grid grid-cols-4 gap-5">
           {featuredData?.slice(0, 4).map((item) => (
-            <ProductCard item={item} key={item.id} />
+            // <ProductCard item={item} key={item.id} />
+            <ProductCardAlt item={item} key={item.id}/>
           ))}
         </div>
         <div className="flex justify-center ">
