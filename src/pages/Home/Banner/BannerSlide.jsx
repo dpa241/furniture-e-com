@@ -21,7 +21,7 @@ const BannerSlide = ({slide}) => {
             className="text-sm">{slide.text}</motion.p>
             <motion.h1 
             variants={fadeIn('right','tween',0.4,1.1)}
-            className="text-4xl lg:text-[42px] font-bold  leading-[60px] pb-8">
+            className="text-5xl lg:text-[48px] font-medium leading-[60px] pb-8">
               {slide.slogan}
             </motion.h1>
             <motion.div 

@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { FaRegStar, FaStar } from "react-icons/fa6";
 import { IoCartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { fadeIn, fadeInOut, fadeOut, staggerContainer } from "@/variants";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { Eye, Star } from "lucide-react";
 const ProductCardAlt = ({ item }) => {
   return (
     <motion.div
@@ -14,12 +22,16 @@ const ProductCardAlt = ({ item }) => {
         initial: {},
         hovered: {},
       }}
-      className="relative h-[400px] border border-gray-200 rounded-md group "
+      className="relative h-[400px] rounded-md group "
     >
-      <div className="h-[300px] bg-gray-100 ">
+      <div className="h-[300px] bg-[#222222]/5 ">
         <div className="w-full h-full flex justify-center items-center ">
           <div className="w-[275px] flex justify-center items-center mx-auto ">
-            <img src="/hero/file.png" alt="" className="max-h-[300px] group-hover:scale-110 transition duration-500 " />
+            <img
+              src="/hero/file.png"
+              alt=""
+              className="max-h-[300px] group-hover:scale-110 transition duration-500 "
+            />
           </div>
         </div>
       </div>
@@ -69,11 +81,47 @@ const ProductCardAlt = ({ item }) => {
             <Button
               // onClick={() => addToCart(item, item.id)}
               variant="outline"
-              className="hover:bg-primary group-hover:text-white border border-gray-200 transition-all duration-1000 w-full h-12 "
+              className="hover:bg-[#0a5d5d] text-[#0a5d5d] hover:text-white border border-[#0a5d5d] transition-all duration-1000 w-full h-12 "
             >
-              <span className="text-black">Add To Cart</span>
-              <IoCartOutline clas size={25} />
+              <span className=" ">Add To Cart</span>
+              {/* <IoCartOutline clas size={25} /> */}
             </Button>
+          </motion.div>
+          <motion.div
+            variants={{
+              initial: { opacity: 0, x: 10 },
+              hovered: { opacity: 1, x: -20, transition: { duration: 0.5 } },
+            }}
+            className="absolute top-0 right-0 "
+          >
+            <div className="space-y-2 flex flex-col ">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center justify-center size-8 rounded-full bg-transparent hover:bg-[#0a5d5d] text-[#0a5d5d] hover:text-white transition duration-500 cursor-pointer">
+                      <Star size={16} strokeWidth={1.5} />
+                    </div>
+                  </TooltipTrigger>
+
+                  <TooltipContent>
+                    <p>Add to Favourite</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center justify-center size-8 rounded-full bg-transparent hover:bg-[#0a5d5d] text-[#0a5d5d] hover:text-white transition duration-500 cursor-pointer">
+                      <Eye size={16} strokeWidth={1.5} />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Quick View</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
           </motion.div>
         </div>
       </div>
