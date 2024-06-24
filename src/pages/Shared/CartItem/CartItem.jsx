@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
   const { removeFromCart, increaseAmount, decreaseAmount,decreaseAmountNotZero } =
     useContext(CartContext);
   return (
-    <div className="flex">
+    <div className="flex pr-5">
       <div className="flex items-center gap-2 w-full h-[150px] border-b  ">
         {/* Image */}
         <div>
