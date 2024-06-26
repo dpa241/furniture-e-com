@@ -7,7 +7,7 @@ import { CartContext } from "@/context/CartContext";
 import { Link, useParams } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
-  const { addToCart } = useContext(CartContext);
+  const { quantity,addToCart } = useContext(CartContext);
   return (
     <div className="relative col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden bg-[#F6F6F6]">
       <div className="">
@@ -53,7 +53,7 @@ const ProductCard = ({ item }) => {
           </div>
           <div>
             <Button
-              onClick={() => addToCart(item, item.id)}
+              onClick={() => addToCart(item, item.id,quantity)}
               variant="cartBtn"
               className="group-hover:bg-primary group-hover:text-white"
             >

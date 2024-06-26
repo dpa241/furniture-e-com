@@ -7,12 +7,12 @@ const ProductImg = ({ selectedProduct }) => {
   const [selectedImg,setSelectedImg] = useState(selectedProduct.images.mainImg)
   return (
     <div className="w-1/2 flex flex-col items-center flex-1">
-      <div className="relative flex items-center justify-center h-[350px] w-[350px]">
+      <div className="relative flex items-center justify-center h-[350px] w-[350px] group">
         <div className="h-full w-full bg-[#F6F6F6]"></div>
         <img
           src={selectedImg}
           alt=""
-          className="absolute h-[320px] w-[320px] object-cover"
+          className="absolute h-[320px] w-[320px] object-cover group-hover:scale-110 transition duration-500 "
         />
       </div>
       <div className="flex gap-1 pt-10">

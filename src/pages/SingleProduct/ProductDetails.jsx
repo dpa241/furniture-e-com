@@ -35,7 +35,7 @@ const ProductDetails = () => {
     <div>Loading.......</div>;
   }
   return (
-    <div className="py-24">
+    <div className="py-24 container mx-auto">
       <div className="flex items-center">
         <ProductImg selectedProduct={selectedProduct} />
         <ProductTopDetails selectedProduct={selectedProduct} id={id} />

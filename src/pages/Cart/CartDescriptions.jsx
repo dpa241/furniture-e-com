@@ -30,7 +30,7 @@ const CartDescriptions = () => {
                     <img
                       src={images?.mainImg}
                       alt=""
-                      className="w-[120px] h-[120px] object-cover"
+                      className="size-[120px] object-cover"
                     />
                     <div className="space-y-2">
                       <div className="space-y-2">

@@ -15,8 +15,9 @@ import { IoMdAdd, IoMdRemove } from "react-icons/io";
 
 const ProductTopDetails = ({ selectedProduct,id }) => {
   // const {id,title,newPrice} = selectedProduct
-  const [quantity, setQuantity] = useState(1);
+  console.log(selectedProduct);
   const {
+    quantity, setQuantity,
     cart,
     addToCart,
     increaseAmount,
@@ -90,8 +91,8 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
             <Button
               variant="outline"
               className="border-r-0 "
-              onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
-              // onClick={()=>decreaseAmount(selectedProduct.id)}
+              // onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+              onClick={()=>decreaseAmountNotZero(selectedProduct.id)}
             >
               <IoMdRemove />
             </Button>
@@ -99,13 +100,15 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
               variant="outline"
               className="hover:bg-transparent cursor-default"
             >
-              {singleCartItem ? singleCartItem.amount: 1}
+              {/* {singleCartItem ? singleCartItem.amount: 1} */}
+              {quantity}
             </Button>
             <Button
               variant="outline"
               className="border-l-0"
-              // onClick={() => setQuantity((prev) => prev + 1)}
+              onClick={() => setQuantity((prev) => prev + 1)}
               // onClick={()=>addToCart(selectedProduct,selectedProduct.id)}
+              // onClick={()=>increaseAmount(selectedProduct.id)}
             >
               <IoMdAdd />
             </Button>
@@ -141,7 +144,7 @@ const ProductTopDetails = ({ selectedProduct,id }) => {
               BUY NOW
             </Button>
             <Button
-              onClick={() => addToCart(selectedProduct, selectedProduct.id)}
+              onClick={() => addToCart(selectedProduct, selectedProduct.id,quantity)}
               variant="outline"
               size=""
             >
