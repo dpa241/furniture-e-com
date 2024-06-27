@@ -4,15 +4,16 @@ import { productData } from "@/data";
 import Product from "./CategoryProduct";
 import CategoryProduct from "./CategoryProduct";
 import { ProductContext } from "@/context/ProductContext";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 const GridView = () => {
   const {products} = useContext(ProductContext)
   console.log(products);
   return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-5 max-w-sm mx-auto md:max-w-none lg:mx-0">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-5 max-w-sm mx-auto md:max-w-none lg:mx-0">
       {products?.slice(0,5).map((product, index) => (
         <CategoryProduct key={index} product={product} />
       ))}
-
       {/* =================================== */}
       {/* <div className="relative flex justify-center overflow-hidden items-center group">
         <div className="absolute group-hover:bg-black/70 w-full h-full z-40 transition-all duration-300"></div>

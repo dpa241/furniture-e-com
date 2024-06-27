@@ -4,6 +4,8 @@ import GridView from "./GridView";
 import SideMenu from "./SideMenu";
 // import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Categories = () => {
   return (
@@ -15,7 +17,7 @@ const Categories = () => {
     >
       <motion.h2 
       variants={fadeIn('right','tween',0.5,1.1)}
-      className="text-3xl font-semibold uppercase">Top Categories</motion.h2>
+      className="text-center lg:text-left text-3xl font-semibold uppercase">Top Categories</motion.h2>
 
       {/* This is Method - 1 */}
 
@@ -52,18 +54,23 @@ const Categories = () => {
 
       {/* This is Method 2 */}
 
-      <div className="flex">
+      <div className="flex justify-center gap-5">
         <motion.div 
         variants={fadeIn('right','tween',0.5,1.1)}
-        className="w-1/4 pr-10">
+        className=" hidden lg:block w-1/4">
           <SideMenu />
         </motion.div>
         <motion.div 
         variants={fadeIn('left','tween',0.5,1.1)}
-        className="w-3/4">
+        className="w-3/4 ">
           <GridView />
         </motion.div>
       </div>
+      <div className="text-center">
+          <Link to={"/shop"} className=" lg:hidden">
+            <Button className="w-[250px]">All Category</Button>
+          </Link>
+        </div>
     </motion.section>
   );
 };

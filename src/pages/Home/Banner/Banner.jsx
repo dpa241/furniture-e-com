@@ -27,7 +27,7 @@ const Banner = () => {
       // install Swiper modules
       modules={[Navigation, Pagination, Autoplay, Scrollbar, A11y]}
       slidesPerView={1}
-      autoplay={{delay: 6000, disableOnInteraction: false}}
+      // autoplay={{delay: 6000, disableOnInteraction: false}}
       pagination={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}

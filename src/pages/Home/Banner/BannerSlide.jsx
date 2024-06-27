@@ -8,7 +8,7 @@ import { fadeIn,staggerContainer } from "@/variants";
 const BannerSlide = ({slide}) => {
   return (
     <section className="pt-[92px]">
-      <div className="container mx-auto h-[65vh] ">
+      <div className="container mx-auto lg:h-[65vh] ">
         <div className="flex justify-between gap-x-5 lg:px-10 ">
   
           <motion.div 

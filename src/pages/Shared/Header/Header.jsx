@@ -21,8 +21,8 @@ const Header = () => {
     window.scrollY > 60 ? setActiveHeader(true) : setActiveHeader(false)
   })
   return (
-    <header className={`${activeHeader? "bg-white py-4 shadow-md ": "bg-none py-6"} fixed z-50 top-0 container mx-auto border transition-all duration-300`}>
-      <div className="flex justify-between items-center">
+    <header className={`${activeHeader? "bg-white py-4 shadow-md ": "bg-none py-6"} fixed z-50 top-0  w-full border transition-all duration-300`}>
+      <div className="container mx-auto flex justify-between items-center">
         <Link to="/"><Logo /></Link>
         <div>
           <Command>
@@ -31,6 +31,8 @@ const Header = () => {
         </div>
         <Nav/>
         <NavIcon/>
+
+        {/* Manual Navbar */}
         {/* <div className={`${isOpen ? 'right-0' : '-right-full'} fixed top-0 bottom-0 w-48 transition-all`}>
           <MobileNav/>
         </div>

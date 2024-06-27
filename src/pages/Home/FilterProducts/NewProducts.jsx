@@ -19,7 +19,7 @@ const NewProducts = () => {
           <Button
             onClick={""}
             variant="link"
-            className="absolute md:top-0 md:right-9 lg:right-5"
+            className="pt-5 md:pt-0 md:absolute  md:top-0 md:right-9 lg:right-5"
           >
             View All
           </Button>

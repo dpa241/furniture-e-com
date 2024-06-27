@@ -22,7 +22,7 @@ const ProductCardAlt = ({ item }) => {
         initial: {},
         hovered: {},
       }}
-      className="relative h-[400px] rounded-md group "
+      className="relative h-[400px] rounded-md group col-span-4 md:col-span-2 lg:col-span-1 max-w-sm mx-auto md:max-w-none lg:mx-0 group overflow-hidden bg-[#F6F6F6]"
     >
       <div className="h-[300px] bg-[#222222]/5 ">
         <div className="w-full h-full flex justify-center items-center ">
